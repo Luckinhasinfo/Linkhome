@@ -4,62 +4,100 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 #divtitulo{
+    margin-top: 3%;
+    display: flex;
     position: absolute;
     text-align: center;
     padding-top: 40px;
-    height: 200px;
-    width: 1200px;
+    height: 100px;
+    width: 300px;
+   
 }
 #h1titulo{
-    font-size: 160px;
+    font-size: 40px;
     height: 100%;
     width: 100%;
 }
 #divFiltros{
-    background-color: ;
+
+    background-color:#DFDFDF;
     border-color: black;
-    border-left: 0px;
-    border-right: 0px;
-    border-style:solid;
+    border-left-style: none;
+    border-right-style: none;
+    border-top-style: solid;
+    border-bottom-style: solid;
     border-width: 2px;
     top:15%;
     position: absolute;
-    height: 300px;
+    height: 80px;
     width:100%;
+    text-align: center;
 }
 #btnFiltros{
-    position: absolute;
-    margin-inline-start: 95%;
-    margin-top:70px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 17px;
-    padding-right: 15px;
-    font-size: 40px;
-    height:150px;
-    width:300px;
-    border-radius: 15px;
+    display: flexbox;
+    margin-inline-start: 93%;
+    margin-top:18px;
+    text-align: center;
+    font-size: 15px;
+    height:40px;
+    width:90px;
+    border-radius: 5px;
+
+}
+.fa-solid{
+    padding-right: 3px;
 
 }
 
 #divVoltar{
+    display: flex;
     width: 200px;
+    text-align: center;
     justify-content: center;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 2.3%;
     margin-left: 15px;
     position: relative;
 }
-#idVoltar{
-left: 20%;
-top: 50%;
-position: absolute;
+#h3Voltar{
+    display: flexbox;
+    padding-top: 8px;
+
+
 }
 #buttonVoltar{  
-    position: absolute;
-    left: 0%;
+
+
     width: 49px;
     height: 49px;
     background-color: white;
     border-radius: 50%; 
+}
+#divOpcoes{
+    display: flex;
+    margin-inline-start: 93%;
+    border-width: 2px;
+    top:5%;
+    position: absolute;
+    height: 60px;
+    width:200px;
+    text-align: center;
+}
+#divPerfil{
+    border-radius: 20px;
+    margin-left: 2%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+}
+#btnPerfil{
+    height: 49px;
+    width: 49px;
+    align-items: center;
+    border-radius: 20px;
+}
+#divDefinirLocal{
+    height:49px;
+    width: 49px;
+
 }
