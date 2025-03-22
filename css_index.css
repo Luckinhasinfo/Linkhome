@@ -71,11 +71,22 @@ input::placeholder{
 #barra2{
     bottom:15%;
 }
-#div-form{
+.div-form-login{
      display: flex;
      align-items: center;
      justify-content: center;
+     flex-direction: column;
+     gap: 30px;
 }
+
+.login-alternativo
+{
+     width: auto;
+     height: 55px;
+     border-radius: 200px;
+     background-color: #e3e3e3
+}
+
 
 .cadastre-se
 {   
