@@ -10,16 +10,29 @@ body{
      height: 100vh;
      width: 100;
 }
-#sair
+#seta_voltar
 {
      transform: rotate(180deg);
 }
-#texto_sair
-{
-     font-size: 30px;
-}
 
-#bola_sair
-{
-     background-color: aqua;
+#divVoltar{
+     display: flex;
+     width: 200px;
+     text-align: center;
+     justify-content: center;
+     align-items: center;
+     margin-top: 2.3%;
+     margin-left: 15px;
+     position: relative;
+     gap:10px;
+ }
+
+ #buttonVoltar{  
+     width: 49px;
+     height: 49px;
+     background-color: white;
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
 }

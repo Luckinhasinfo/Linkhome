@@ -8,46 +8,53 @@
 
          <link rel="stylesheet" href="../css_padrao.css">
 
-     </head>
-     <link rel="stylesheet" href="adicionar_imovel.css">
-     <body>
+    </head>
+    <link rel="stylesheet" href="adicionar_imovel.css">
+    <body>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
           crossorigin="anonymous">
         </script>
-        
-        
-        
         <div class="position-absolute top-0 start-0" id="divVoltar">
-        <button id="buttonVoltar">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
-          </svg>
-        </button> 
-        <h3 id="h3Voltar">Voltar</h3>
+            <button id="buttonVoltar">
+                <img src="../imagens/seta_voltar.svg" alt="seta" id="seta_voltar">
+            </button> 
+            <h3 id="h3Voltar">Voltar</h3>
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <div  class="position-absolute start-50 translate-middle" id="divtitulo">
-            <h1 id="h1titulo">Meus Imoveis</h1>
+        <div class="position-absolute start-50 translate-middle" id="divtitulo">
+            <h1 id="h1titulo">Meus Imóveis</h1>
         </div>
         <div id="divFiltros">
-            <button id="btnFiltros"><i class="fa-solid fa-filter"></i>Filtros</button>
+            <button id="btnFiltros"><i id="iconeFiltro" class="fa-solid fa-filter"></i>Filtros
+            </button>
         </div>
         <div id="divOpcoes">
-            <div id="divDefinirLocal"><button id="btnDefinirLocal"></button></div>
-            <div id="divPerfil"><button id="btnPerfil"><i class="fa-solid fa-user"></i></button></div>
+            <div id="divDefinirLocal">
+                <span id="paisAtual">BRL</span>
+                <button id="btnDefinirLocal">
+                    <div id="divImgPais">
+                        <img id="imgPais" src="https://avatars.githubusercontent.com/u/162645683?v=4">
+                    </div>
+                </button>
+            </div>
+            <div id="divPerfil">
+                <button id="btnPerfil"><i class="fa-solid fa-user">
+                    </i>
+                </button>
+            </div>
+        </div>
+        <div id="propriedadesExistentes">
+            <div class="propriedadeIcone">
+                <div class="fotoPropriedade">
+                    <img src="" alt="">
+                </div>
+                <div class="infoPropriedade">
+                    <h4 id="endereco"></h4>
+                    <div id="avaliação"></div>
+                </div>
+
+
+            </div>
         </div>
     </body>
 </html>

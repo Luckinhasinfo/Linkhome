@@ -87,12 +87,30 @@ input::placeholder{
 #divBotLogar{
     margin-top: 30px;
     position: relative;
+
+}
+
+#botCadastrar{
+    border-radius: 30.49px;
+    background-color: rgba(0, 0, 0, 0.45);
+    width: 337.29px;
+    height: 53.36px;
+    font-size: 20.96px;
+    color: white;
+    border: 0px;
+    left: 50%;
+}
+#divBotCadastro{
+    margin-top: 30px;
+    position: relative;
 }
 
 #google{
- margin-bottom: 24px;
+ margin-bottom: 11px;
 } 
-
+#facebook{
+    margin-top: 11px;
+}
 
 .login-alternativo
 {
@@ -122,11 +140,11 @@ input::placeholder{
 {   
      font-size: 24px;
      font-weight: 470;
-     color: rgb(32, 0, 128);
+     color: #050062;
 }
-.Naopossui{
+.NaoPossui{
     font-size: 24px;
-    font-weight: 470;
+    font-weight: 490;
     color: black;
 }
 
