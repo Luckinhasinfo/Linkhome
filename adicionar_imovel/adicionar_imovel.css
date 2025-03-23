@@ -1,4 +1,5 @@
-body{background-color: #DFDFDF;
+body{
+    background: linear-gradient(to bottom, #E3E3E3 0%, #BEBEBE 90%, #A6A6A6 94%, #808080 100%); 
     padding: 0px;
     margin: 0px;
     font-family: 'Poppins', sans-serif;
@@ -103,16 +104,13 @@ body{background-color: #DFDFDF;
     margin-inline-start: 11%;
 }
 #propriedadesExistentes{
-    background-color: #DFDFDF;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
     padding-right: 5%;
-    padding-left:5%;
+    padding-left: 5%;
     float: none;
-    z-index: 2;
     top:24%;
     position: absolute;
-    height:75%;
     width: 100%;
 }
 .propriedadeIcone{

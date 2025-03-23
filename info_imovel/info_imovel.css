@@ -3,8 +3,12 @@ body{
     margin: 0px;
     font-family: 'Poppins', sans-serif;
 }
+#partSuper{
+    display: flex;
+    height: 100px ;
+}
 #boxSearch{
-    margin-top: 46px;
+    margin-top: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,12 +23,17 @@ body{
     box-shadow: 0px 2px 8px rgba(0,0,0, 0.25);
     padding-left: 20px;
 }
+#pesquisa :focus{
+    border: 2px solid black;
+    box-shadow: 0px 2px 8px rgba(0,0,0, 0.25);
+}
 #pesquisa::placeholder{
     color: rgba(0,0,0,0.4);
     font-size: 20px;
     padding-left: 10px;
 }
 #lupaPes{
+    display: flex;
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -33,7 +42,21 @@ body{
     align-items: center;
     justify-content: center;
 }
-#lupaPes lupa{
-    height: 40px;
-    width: 40px;
+#lupaPes:hover{
+    border: 2px solid black;
+}
+#lupa{
+    height: 30px;
+    width: 30px;
+}
+#textNameLocal{
+    font-size: 30px;
+    color: black;
+}
+#infoImovel{
+    width: 75%;
+    margin-left: 12.5%;
+    margin-top: 30px;
+    margin-right: 12.5%;
+    display: flex;
 }
