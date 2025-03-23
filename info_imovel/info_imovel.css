@@ -30,4 +30,10 @@ body{
     border-radius: 50%;
     background-color: white;
     border: 1px solid black;
+    align-items: center;
+    justify-content: center;
+}
+#lupaPes lupa{
+    height: 40px;
+    width: 40px;
 }

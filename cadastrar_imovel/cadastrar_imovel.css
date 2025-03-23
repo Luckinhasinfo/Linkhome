@@ -2,6 +2,7 @@ body {
     padding: 0px;
     margin: 0px;
     font-family: 'Poppins', sans-serif;
+    background-color: #DFDFDF;
 }
 #divtitulo{
     margin-top: 3%;
@@ -80,4 +81,18 @@ body {
     height: 100%;
     margin-top: 7%;
     margin-inline-start: 11%;
+}
+#dadosProprietario{
+    background-color: BLACK;
+    width: 600px;
+    height: 400px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    color: white;
+}
+/*D9D9D9*/
+.inputDdaos{
+    position: absolute;
 }
