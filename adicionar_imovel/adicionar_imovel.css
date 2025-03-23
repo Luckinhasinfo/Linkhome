@@ -1,6 +1,6 @@
-
 body{
-    background-color: #DFDFDF;
+    padding: 0px;
+    margin: 0px;
     font-family: 'Poppins', sans-serif;
 }
 #divtitulo{
@@ -46,14 +46,6 @@ body{
 }
 #iconeFiltro{
     padding-right: 3px;
-
-}
-
-#h3Voltar{
-    display: flexbox;
-    padding-top: 8px;
-
-
 }
 #divOpcoes{
     text-align: left;
@@ -109,4 +101,26 @@ body{
     height: 100%;
     margin-top: 7%;
     margin-inline-start: 11%;
+}
+#propriedadesExistentes{
+    top:24%;
+    position: absolute;
+    min-height:75%;
+    width: 100%;
+}
+.propriedadeIcone{
+    margin-inline-start: 2%;
+    margin-top: 1%;
+    position: absolute;
+    width: 430px;
+    height: 420px;
+    border-radius: 10px;
+    border-style: solid;
+
+}
+#botaoAddNovoImovel{
+    align-items: center;
+    width: 250px; 
+    height: 60px;
+    border-radius: 10px;
 }

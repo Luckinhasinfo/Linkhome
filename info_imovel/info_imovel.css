@@ -1,0 +1,20 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+#divSearch{
+    margin-top: 46px;
+    display: flex;
+}
+#pesquisa{
+    width: 430px;
+    height: 48px;
+    background-color: white;
+    border-radius: 37px;
+}
+#pesquisa::placeholder{
+    color: rgba(0,0,0,0.4);
+    font-size: 20px;
+    padding-left: 10px;
+}
