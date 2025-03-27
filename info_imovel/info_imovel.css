@@ -53,7 +53,7 @@
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255,0.3);
     margin-top: 20px;
     display: flex;
     border-radius: 20px;
@@ -72,7 +72,7 @@
 }
 .d-block{
     width: 100%;
-    height: 500px;
+    height: 550px;
     border-radius: 10px;
 }
 
@@ -96,20 +96,82 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-
 }
 #agendarReserva{
-    display: flex;
     width: 100%;
+    display: flex;
+    flex-direction: column;
     background-color:white;
     border: 1px solid black;
     border-radius: 20px;
-    justify-content: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    text-align: center;
 }
 
-#valorDiaria{
+#valorDiaria, #reservarLocal{
     color: black;
     font-size: 24px;
+    font-weight: 495;
 }
+.linha{
+   margin-top: 20px;
+   width: 100%;
+   height: 1px;
+   background-color: black;
+   margin-bottom: 20px;
+}
+
+#dataReserva{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 250px;
+}
+.checkReser{
+    margin-top: 20px;
+}
+.textCheck{
+    font-size: 20px;
+    font-weight: 400;
+}
+#checkIn{
+    margin-left: 10%;
+}
+#checkOut{
+    margin-right: 10%;
+}
+.dataReser{
+    display: flex;
+}
+#inData, #outData{
+    margin-top: 20px;
+    width: 90%;
+    background-color: #d4d4d4;
+    height: 65px;
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid black;
+}
+#inData:focus, #outData:focus{
+    border: 2px solid black;
+}
+#inData{
+  margin-left: 10%;
+  border-top-left-radius: 35px;
+  border-right: 0px;
+}
+#outData{
+    margin-right: 10%;
+    border-top-right-radius: 35px;
+}
+::-webkit-datetime-edit{
+    align-items: center;
+    opacity: 0.4;
+    color: black;
+}
+::-webkit-calendar-picker-indicator {
+    height: 26px;
+    width: 26px;
+    opacity: 60%;
+  }
