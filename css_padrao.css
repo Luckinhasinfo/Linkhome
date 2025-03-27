@@ -1,11 +1,16 @@
 html, body
 {
-     background: linear-gradient(to bottom, #E3E3E3 0%, #BEBEBE 90%, #A6A6A6 94%, #808080 100%); 
      z-index: 0; 
      padding: 0px;
      margin: 0px;
      min-height: 100%;
      background-attachment: fixed;
+}
+#imagem_fundo
+{
+     width: 100vw;
+     height: 100vh;
+     z-index: 0;
 }
 #textVoltar{
      font-size: 24px;
@@ -15,7 +20,7 @@ html, body
      margin-bottom: 0;
 }
 #div-Back{
-     background: linear-gradient(to bottom, #E3E3E3 0%, #BEBEBE 90%, #A6A6A6 94%, #808080 100%); 
+     background: linear-gradient(to bottom, #e3e3e3 0%, #BEBEBE 90%, #A6A6A6 94%, #808080 100%); 
      z-index: 0; 
      width: 100vw;
 }
