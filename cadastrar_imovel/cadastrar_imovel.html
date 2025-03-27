@@ -40,40 +40,47 @@
      </div>
      <div id="dadosProprietario" class="position-absolute top-50 start-50 translate-middle">
           <h4 class="position-absolute top-0 start-50 translate-middle">Dados da Propriedade</h4>
+     
+          <button id="botao_foto_perfil">
+               <img src="../imagens/baixar.svg" alt="upload" id="baixar_icone" width="75px" heigth="75px">
+               <p id="texto_foto_perfil">Faça um upload da foto da sua residência</p>
+          </button>
           <form method=POST id="form-ci">
                <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">CEP</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                  </div>
-                  
-                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                         aria-describedby="inputGroup-sizing-default">
+               </div>
+
+               <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Bairro</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                  </div>
-                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                         aria-describedby="inputGroup-sizing-default">
+               </div>
+               <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Nº</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                  </div>
-                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                         aria-describedby="inputGroup-sizing-default">
+               </div>
+               <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Logradouro</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                  </div>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                         aria-describedby="inputGroup-sizing-default">
+               </div>
           </form>
      </div>
      <button id="botaoProximo" class="position-absolute bottom-0 end-0">
           Próximo <img src="../imagens/seta_voltar.svg" alt="seta" id="seta_proximo" width="40px" height="40px">
      </button>
 
-          <button id="botao_foto_perfil">
-               <img src="../imagens/baixar.svg" alt="upload" id="baixar_icone" width="75px" heigth="75px">
-               <p id="texto_foto_perfil">Faça um upload da foto da sua residência</p>
-          </button>
+
 
 </body>
 <script src="../js_padrao.js"></script>
 <script>
      //pode tirar dps
      let botao = document.getElementById('botaoProximo');
-     botao.addEventListener('click', () => {window.location.href="../cadastrar_imovel2/cadastrar_imovel2.html"})
+     botao.addEventListener('click', () => { window.location.href = "../cadastrar_imovel2/cadastrar_imovel2.html" })
 </script>
+
 </html>

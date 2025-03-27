@@ -1,10 +1,4 @@
-body{
-    height:100%;
-    background-color:#9d4edd;
-    padding: 0px;
-    margin: 0px;
-    font-family: 'Poppins', sans-serif;
-}
+
 #divtitulo{
     background-color:#9d4edd ;
     margin-top: 3%;
@@ -15,6 +9,12 @@ body{
     height: 100px;
     width: 300px;
    
+}
+.cabecalho{
+    background-color:#9d4edd;
+    height: 15%;
+    width: 100%;
+    position: absolute;
 }
 #h1titulo{
     color: #ffffff;
@@ -62,7 +62,7 @@ body{
     width:200px;
 }
 #divPerfil{
-    border-radius: 20px;
+    border-radius: 25px;
     margin-inline-end: 15%;
     height: 49px;
     width: 49px;
@@ -125,26 +125,31 @@ body{
     position: relative;
     width: 300px;
     height: 320px;
-    border-radius: 25px;
+    border-radius: 15px;
     border-style: solid;
     
 
 }
+.propriedadeIcone:hover{
+    border-radius: 15px;
+    background-color: #cecece;
+    transition: 0.5s;
+    scale:1.09;
+}
 .divfotoPropriedade{
-    border-radius:25px;
+    border-radius:15px;
     height: 70%;
     width: 100%;
-    border-radius: 25px;
     background-color: #FFFFFF;
 }
 #botaoAddNovoImovel{
     width: 250px; 
     height: 60px;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .propriedadeImg{
-    border-radius:25px;
+    border-radius:15px;
     height: 100%;
     width: 100%;
 }
