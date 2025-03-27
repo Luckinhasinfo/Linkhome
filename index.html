@@ -57,7 +57,8 @@
                          placeholder="Digite sua senha">
                          </div>
                          <div id="divBotLogar"><!--DIV BOTAO LOGAR-->
-                              <input type="submit" id="botLogar" value="Logar">
+                              <input type="button" id="botLogar" value="Logar">
+                              <!--TYPE BUTTON SÓ PRA APRESENTAR SEM MORRER TUDO ASKDASDKASMDASKDMKASMDKSAMDKSAMD NÃO ESQUECE DE MUDAR-->
                          </div><!--DIV BOTAO LOGAR-->
                     </form>
                </div>
@@ -78,4 +79,9 @@
 </body>
 
 <script src="js_padrao.js"></script>
+<script>
+     //pode tirar dps
+     let botao = document.getElementById('botLogar');
+     botao.addEventListener('click', () => {window.location.href="../inicial/inicial.html"})
+</script>
 </html>
