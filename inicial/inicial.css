@@ -122,12 +122,6 @@
      gap:1%;
      justify-content: center;
 }
-#div-mapa
-{
-     background-color: blue;
-     /* width: 50%; Já tem no boostrap*/
-     height: 70vh;
-}
 
 
 
@@ -173,8 +167,18 @@
      margin-left: 7%;
  }
 
+ 
+ #div-mapa
+{
+     background-color: blue;
+     /* width: 50%; Já tem no boostrap*/
+     height: 100%;
+}
+
  #mapa
  {
      width: 100%;
- 
+     height: 100%;
  }
+
+

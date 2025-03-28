@@ -113,7 +113,7 @@ body{
     text-align: center;
 }
 
-#valorDiaria, #reservarLocal, #valorFinal{
+#valorDiaria, #reservarLocal, #textvalorFinal{
     color: black;
     font-size: 24px;
     font-weight: 495;
@@ -226,7 +226,36 @@ body{
     text-align: right;
     padding-right: 10%;
 }
-#taxasAplicativos, #valorReserva{
-    grid-column: 1;
-    text-align: left;
+#taxasAplicativo, #valorReserva{
+    display: flex;
+    text-align: center;
+    justify-content: left;
+    padding-left: 10px;
+}
+#valorFinal{
+    font-size: 25px;
+    color: black;
+    font-weight: 500;
+}
+#botaoReservar {
+    grid-column: 2;
+    width: 100%;
+    height: 55px;
+    color: white;
+    background-color: black;
+    font-size: 24px;
+    border-radius: 20px;
+    margin-top: 20px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+#botaoReservar:hover {
+    background-color: #c53232; 
 }
