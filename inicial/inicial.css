@@ -112,15 +112,14 @@
  width: 100vw;
  display: grid;
  grid-template-columns: 1fr 1fr;
- background-color: #9d4edd;
 }
 
 #div-lado-esquerdo
 {
-     background-color: aqua;
      display: flex;
      gap:1%;
      justify-content: center;
+     background: linear-gradient(to bottom, #ffffff 0%, #ecebeb 90%);
 }
 
 
@@ -170,13 +169,13 @@
  
  #div-mapa
 {
-     background-color: blue;
      /* width: 50%; Já tem no boostrap*/
      height: 100%;
 }
 
  #mapa
  {
+     border-radius: 5px;
      width: 100%;
      height: 100%;
  }
