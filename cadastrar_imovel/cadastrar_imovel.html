@@ -32,14 +32,31 @@
                     </div>
                </button>
           </div>
+          
+          <!--NAO APAGAR PERFIL-->
           <div id="divPerfil">
-               <button id="btnPerfil"><i class="fa-solid fa-user">
+               <button id="btnPerfil" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i
+                         class="fa-solid fa-user">
                     </i>
                </button>
           </div>
+          <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" 
+               aria-labelledby="offcanvasWithBothOptionsLabel">
+               <div class="offcanvas-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+               </div>
+               <div class="offcanvas-body iframe_perfil">
+                    <iframe src="../user/user.html"
+                    width="100%"
+                    height="100%"></iframe>
+               </div>
+          </div>
+          <!--NAO APAGAR PERFIL-->
      </div>
+     <img src="../imagens/casa-isolada-no-campo_1303-23773.avif" id="casa_fundo">
      <div id="dadosProprietario" class="position-absolute top-50 start-50 translate-middle">
-          <h4 class="position-absolute top-0 start-50 translate-middle">Dados da Propriedade</h4>
+          <h4 class="position-absolute top-0 start-50 translate-middle-x">Dados da Propriedade</h4>
      
           <button id="botao_foto_perfil">
                <img src="../imagens/baixar.svg" alt="upload" id="baixar_icone" width="75px" heigth="75px">
