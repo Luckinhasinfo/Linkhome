@@ -29,7 +29,6 @@
      border-left-style: none;
      border-right-style: none;
      border-top-style: solid;
-     border-bottom-style: solid;
      border-width: 2px;
      top:15%;
      position: absolute;
@@ -110,16 +109,20 @@
  top:28%;
  position: absolute;
  width: 100vw;
+ height: 72vh;
  display: grid;
- grid-template-columns: 1fr 1fr;
+ grid-template-columns: 45% 55%;
+ overflow-y: hidden;
+
 }
 
 #div-lado-esquerdo
 {
      display: flex;
-     gap:1%;
+     gap:3%;
      justify-content: center;
-     background: linear-gradient(to bottom, #ffffff 0%, #ecebeb 90%);
+     overflow-y: scroll;
+     background: linear-gradient(to bottom, #ffffff 0%, #ecebeb 70%);
 }
 
 

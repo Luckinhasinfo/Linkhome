@@ -22,13 +22,18 @@
      margin-right: 1% ;
      background-color: #f5f2f7;
  }
+ 
+#botaoProximo:hover{
+     transition: 0.5s;
+     background-color: #9d4edd;
+}
  #seta_proximo{
      transform: rotate(360deg);
  }
  #dadosProprietario{
       display: flex;
       flex-direction: column;
-     background-color: #9d4edd;
+     background-color: #f5f2f7;
      width: 600px;
      height: 400px;
      border-radius: 10px;

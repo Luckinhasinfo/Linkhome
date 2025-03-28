@@ -107,7 +107,7 @@
     margin-inline-start: 11%;
 }
 #propriedadesExistentes{
-    background-color:#ffffff;
+     background: linear-gradient(to bottom, #ffffff 0%, #ecebeb 70%);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
     padding-right: 5%;
@@ -116,6 +116,7 @@
     top:23%;
     position: absolute;
     width: 100%;
+    
 }
 .propriedadeIcone{
     display: flexbox;
@@ -154,10 +155,20 @@
     width: 100%;
 }
 .infoPropriedade{
+     padding-left: 4%;   
+     padding-right: 4%;
     display: grid;
+    gap:5%;
     grid-template-columns: 1fr 1fr;
     margin-top: 3%;
 }
-#localizacão{
-    margin-left: 7%;
+
+.preco{
+     top:30%;
+}
+#imagem_fundo
+{
+     z-index: 0;
+     width: 100%;
+     height: 100%;
 }
