@@ -1,25 +1,47 @@
 body{
     background-color: white;
+    font-family: "Poppins", sans-serif;
 }
 #div_principal{
     width: 400px;
     height: 500px;
     border-radius: 10px;
-    background-color: #9D4EBD;
+    background-color: white;
+    border: 1px solid #9D4EBD;
 }
 #user_Img{
+    background-color: #D9D9D9;
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: white;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-left: 5px;
 }
 #nome_user{
-    color: white;
+    color: #9D4EBD;
 }
 #div_inferior{
     width: 375px;
-    heigth: 400px;
-    
+    height: 350px;   
+}
+.btn{
+background-color: white;
+color: #9D4EBD;
+border-left: 0px;
+border-right: 0px;
+border-color: #9D4EBD;
+padding: 10px 15px 10px 15px;
+margin-top: 50px;
+border-radius: 0px;
+}
+.btn:hover{
+    background-color: #9D4EBD;
+    border-color: white;
+}
+.primeiro{
+    border-top: 0px;
+
+}
+.ultimo{
+    border-bottom: 0px;
 }

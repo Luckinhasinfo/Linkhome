@@ -1,0 +1,180 @@
+
+#divtitulo{
+     background-color:#9d4edd ;
+     margin-top: 3%;
+     display: flex;
+     position: absolute;
+     text-align: center;
+     padding-top: 40px;
+     height: 100px;
+     width: 300px;
+    
+ }
+ .cabecalho{
+     background-color:#9d4edd;
+     height: 15%;
+     width: 100%;
+     position: absolute;
+ }
+ #h1titulo{
+     color: #ffffff;
+     font-size: 40px;
+     height: 100%;
+     width: 100%;
+ }
+ #divFiltros{
+ 
+     background-color:#ffffff;
+     border-color: black;
+     border-left-style: none;
+     border-right-style: none;
+     border-top-style: solid;
+     border-bottom-style: solid;
+     border-width: 2px;
+     top:15%;
+     position: absolute;
+     height: 80px;
+     width:100%;
+     text-align: center;
+ }
+ #btnFiltros{
+     display: flexbox;
+     margin-inline-start: 91%;
+     margin-top:18px;
+     text-align: center;
+     font-size: 15px;
+     height:40px;
+     width:90px;
+     border-radius: 5px;
+ 
+ }
+ #iconeFiltro{
+     padding-right: 3px;
+ }
+ #divOpcoes{
+     text-align: left;
+     display: flex;
+     margin-inline-start: 89%;
+     border-width: 2px;
+     top:5%;
+     position: absolute;
+     height: 60px;
+     width:200px;
+ }
+ #divPerfil{
+     border-radius: 25px;
+     margin-inline-end: 15%;
+     height: 49px;
+     width: 49px;
+     display: flex;
+ }
+ #btnPerfil{
+     height: 100%;
+     width: 100%;
+     align-items: center;
+     border-radius: 50px;
+ }
+ #divDefinirLocal{
+     display: flexbox;
+     text-align: start;
+     margin-right: 5%;
+     height:50px;
+     width: 120px;
+ }
+ #btnDefinirLocal{
+     width: 100%;
+     height: 100%;
+     border-radius: 50px;
+     
+ }
+ #imgPais{
+     border-radius: 50px;
+     height: 100%;
+     width: 100%;
+ 
+ }
+ #divImgPais{
+     margin-left: 59%;
+     height: 45px;
+     width: 45px;
+ }
+ #paisAtual{
+     position: absolute;
+     text-align: justify;
+     width: 20px;
+     height: 100%;
+     margin-top: 7%;
+     margin-inline-start: 11%;
+ }
+#div-geral{
+ top:28%;
+ position: absolute;
+ width: 100vw;
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ background-color: #9d4edd;
+}
+
+#div-lado-esquerdo
+{
+     background-color: aqua;
+     display: flex;
+     gap:1%;
+     justify-content: center;
+}
+#div-mapa
+{
+     background-color: blue;
+     /* width: 50%; Já tem no boostrap*/
+     height: 70vh;
+}
+
+
+
+
+
+
+.propriedadeIcone{
+     margin-top: 4%;
+     border-width: 0px;
+     background-color: #ffffff ;
+     position: relative;
+     width: 300px;
+     height: 320px;
+     border-radius: 15px;
+     border-style: solid;
+     
+ 
+ }
+ .propriedadeIcone:hover{
+     border-radius: 15px;
+     background-color: #cecece;
+     transition: 0.5s;
+     scale:1.09;
+ }
+ .divfotoPropriedade{
+     border-radius:15px;
+     height: 70%;
+     width: 100%;
+     background-color: #FFFFFF;
+ }
+
+ .propriedadeImg{
+     border-radius:15px;
+     height: 100%;
+     width: 100%;
+ }
+ .infoPropriedade{
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     margin-top: 3%;
+ }
+ #localizacão{
+     margin-left: 7%;
+ }
+
+ #mapa
+ {
+     width: 100%;
+ 
+ }

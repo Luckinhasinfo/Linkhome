@@ -9,254 +9,123 @@
      <link rel="stylesheet" href="../css_padrao.css">
 
 </head>
-<link rel="stylesheet" href="adicionar_imovel.css">
+<link rel="stylesheet" href="inicial.css">
 
 <body>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-     </script> 
+          </script>
      <div class="position-absolute top-0 start-0" id="divVoltar">
           <button id="buttonVoltar">
                <img src="../imagens/seta_voltar.svg" alt="seta" id="seta_voltar">
           </button>
-               <h3 id="textVoltar">Voltar</h3>
-          </div>
-          <div class="position-absolute start-50 translate-middle" id="divtitulo">
-               <h1 id="h1titulo">Meus Imóveis</h1>
-          </div>
-          <div id="divFiltros">
-               <button id="btnFiltros"><i id="iconeFiltro" class="fa-solid fa-filter"></i>Filtros
+          <h3 id="textVoltar">Voltar</h3>
+     </div>
+     <div class="position-absolute start-50 translate-middle" id="divtitulo">
+          <h1 id="h1titulo">Meus Imóveis</h1>
+     </div>
+     <div id="divFiltros">
+          <button id="btnFiltros"><i id="iconeFiltro" class="fa-solid fa-filter"></i>Filtros
+          </button>
+     </div>
+     <div id="divOpcoes">
+          <div id="divDefinirLocal">
+               <span id="paisAtual">BRL</span>
+               <button id="btnDefinirLocal">
+                    <div id="divImgPais">
+                         <img id="imgPais" src="https://avatars.githubusercontent.com/u/162645683?v=4">
+                    </div>
                </button>
           </div>
-          <div id="divOpcoes">
-               <div id="divDefinirLocal">
-                    <span id="paisAtual">BRL</span>
-                    <button id="btnDefinirLocal">
-                         <div id="divImgPais">
-                              <img id="imgPais" src="https://avatars.githubusercontent.com/u/162645683?v=4">
-                         </div>
-                    </button>
-               </div>
-               <div id="divPerfil">
-                    <button id="btnPerfil"><i class="fa-solid fa-user">
-                         </i>
-                    </button>
-               </div>
+          <div id="divPerfil">
+               <button id="btnPerfil"><i class="fa-solid fa-user">
+                    </i>
+               </button>
           </div>
-          <div id="propriedadesExistentes">
+     </div>
+
+
+     <div id="div-geral"><!--CAIXA DE TUDO-->
+          <div class="row row-cols-auto" id="div-lado-esquerdo">
+
+
                <div class="propriedadeIcone">
                     <div class="divfotoPropriedade">
-                         <img class="propriedadeImg" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg" alt="">
+                         <img class="propriedadeImg"
+                              src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg"
+                              alt="">
                     </div>
                     <div class="infoPropriedade">
                          <h5 id="localizacão">Rubim,Centro</h5>
                          <h5 class="preco">R$</h5>
-                    <div id="avaliação">
-                    
-                    </div>
-                    
-                    </div>
-               </div>
-               <div class="propriedadeIcone">
-                    <div class="divfotoPropriedade">
-                         <img class="propriedadeImg" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg" alt="">
-                    </div>
-                    <div class="infoPropriedade">
-                         <h5 id="localizacão">Rubim,Centro</h5>
-                         <h5 class="preco">R$</h5>
-                    <div id="avaliação">
-                    
-                    </div>
-                    
-                    </div>
-               </div>
-               <div class="propriedadeIcone">
-                    <div class="divfotoPropriedade">
-                         <img class="propriedadeImg" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg" alt="">
-                    </div>
-                    <div class="infoPropriedade">
-                         <h5 id="localizacão">Rubim,Centro</h5>
-                         <h5 class="preco">R$</h5>
-                    <div id="avaliação">
-                    
-                    </div>
-                    
-                    </div>
-               </div>
-               <div class="propriedadeIcone">
-                    <div class="divfotoPropriedade">
-                         <img class="propriedadeImg" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg" alt="">
-                    </div>
-                    <div class="infoPropriedade">
-                         <h5 id="localizacão">Rubim,Centro</h5>
-                         <h5 class="preco">R$</h5>
-                    <div id="avaliação">
-                    
-                    </div>
-                    
-                    </div>
-               </div>
-               <div class="propriedadeIcone">
-                    <div class="divfotoPropriedade">
-                         <img class="propriedadeImg" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg" alt="">
-                    </div>
-                    <div class="infoPropriedade">
-                         <h5 id="localizacão">Rubim,Centro</h5>
-                         <h5 class="preco">R$</h5>
-                    <div id="avaliação">
-                    
-                    </div>
-                    
-                    </div>
-               </div>
-               <div class="propriedadeIcone">
-                    <div class="divfotoPropriedade">
-                         <img class="propriedadeImg" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg" alt="">
-                    </div>
-                    <div class="infoPropriedade">
-                         <h5 id="localizacão">Rubim,Centro</h5>
-                         <h5 class="preco">R$</h5>
-                    <div id="avaliação">
-                    
-                    </div>
-                    
-                    </div>
-               </div>
-               <div class="propriedadeIcone">
-                    <div class="divfotoPropriedade">
-                         <img class="propriedadeImg" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg" alt="">
-                    </div>
-                    <div class="infoPropriedade">
-                         <h5 id="localizacão">Rubim,Centro</h5>
-                         <h5 class="preco">R$</h5>
-                    <div id="avaliação">
-                    
-                    </div>
-                    
-                    </div>
-               </div>
-               <div class="propriedadeIcone">
-                    <div class="divfotoPropriedade">
-                         <img class="propriedadeImg" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg" alt="">
-                    </div>
-                    <div class="infoPropriedade">
-                         <h5 id="localizacão">Rubim,Centro</h5>
-                         <h5 class="preco">R$</h5>
-                    <div id="avaliação">
-                    
-                    </div>
-                    
-                    </div>
-               </div>
-               <div class="propriedadeIcone">
-                    <div class="divfotoPropriedade">
-                         <img class="propriedadeImg" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg" alt="">
-                    </div>
-                    <div class="infoPropriedade">
-                         <h5 id="localizacão">Rubim,Centro</h5>
-                         <h5 class="preco">R$</h5>
-                    <div id="avaliação">
-                    
-                    </div>
-                    
-                    </div>
-               </div>
-               <div class="propriedadeIcone">
-                    <div class="divfotoPropriedade">
-                         <img class="propriedadeImg" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg" alt="">
-                    </div>
-                    <div class="infoPropriedade">
-                         <h5 id="localizacão">Rubim,Centro</h5>
-                         <h5 class="preco">R$</h5>
-                    <div id="avaliação">
-                    
-                    </div>
-                    
-                    </div>
-               </div>
-               <div class="propriedadeIcone">
-                    <div class="divfotoPropriedade">
-                         <img class="propriedadeImg" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg" alt="">
-                    </div>
-                    <div class="infoPropriedade">
-                         <h5 id="localizacão">Rubim,Centro</h5>
-                         <h5 class="preco">R$</h5>
-                    <div id="avaliação">
-                    
-                    </div>
-                    
-                    </div>
-               </div>
-               <div class="propriedadeIcone">
-                    <div class="divfotoPropriedade">
-                         <img class="propriedadeImg" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg" alt="">
-                    </div>
-                    <div class="infoPropriedade">
-                         <h5 id="localizacão">Rubim,Centro</h5>
-                         <h5 class="preco">R$</h5>
-                    <div id="avaliação">
-                    
-                    </div>
-                    
-                    </div>
-               </div>
-               <div class="propriedadeIcone">
-                    <div class="divfotoPropriedade">
-                         <img class="propriedadeImg" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg" alt="">
-                    </div>
-                    <div class="infoPropriedade">
-                         <h5 id="localizacão">Rubim,Centro</h5>
-                         <h5 class="preco">R$</h5>
-                    <div id="avaliação">
-                    
-                    </div>
-                    
-                    </div>
-               </div>
-               <div class="propriedadeIcone">
-                    <div class="divfotoPropriedade">
-                         <img class="propriedadeImg" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg" alt="">
-                    </div>
-                    <div class="infoPropriedade">
-                         <h5 id="localizacão">Rubim,Centro</h5>
-                         <h5 class="preco">R$</h5>
-                    <div id="avaliação">
-                    
-                    </div>
-                    
-                    </div>
-               </div>
-               <div class="propriedadeIcone">
-                    <div class="divfotoPropriedade">
-                         <img class="propriedadeImg" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg" alt="">
-                    </div>
-                    <div class="infoPropriedade">
-                         <h5 id="localizacão">Rubim,Centro</h5>
-                         <h5 class="preco">R$</h5>
-                    <div id="avaliação">
-                    
-                    </div>
-                    
-                    </div>
-               </div>
-               <div class="propriedadeIcone">
-                    <div class="divfotoPropriedade">
-                         <img class="propriedadeImg" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg" alt="">
-                    </div>
-                    <div class="infoPropriedade">
-                         <h5 id="localizacão">Rubim,Centro</h5>
-                         <h5 class="preco">R$</h5>
-                    <div id="avaliação">
-                    
-                    </div>
-                    
+                         <div id="avaliação">
+                         </div>
                     </div>
                </div>
 
-                
-               <button id="botaoAddNovoImovel" class="position-absolute bottom-0 end-0">
-                <img src="../imagens/baixar.svg" alt="baixar" id="baixar_imoveis" width="40px" height="40px"> Novo Imóvel
-                </button>
+               <div class="propriedadeIcone">
+                    <div class="divfotoPropriedade">
+                         <img class="propriedadeImg"
+                              src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg"
+                              alt="">
+                    </div>
+                    <div class="infoPropriedade">
+                         <h5 id="localizacão">Rubim,Centro</h5>
+                         <h5 class="preco">R$</h5>
+                         <div id="avaliação">
+                         </div>
+                    </div>
+               </div>
+
+               <div class="propriedadeIcone">
+                    <div class="divfotoPropriedade">
+                         <img class="propriedadeImg"
+                              src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg"
+                              alt="">
+                    </div>
+                    <div class="infoPropriedade">
+                         <h5 id="localizacão">Rubim,Centro</h5>
+                         <h5 class="preco">R$</h5>
+                         <div id="avaliação">
+                         </div>
+                    </div>
+               </div>
+
+               <div class="propriedadeIcone">
+                    <div class="divfotoPropriedade">
+                         <img class="propriedadeImg"
+                              src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg"
+                              alt="">
+                    </div>
+                    <div class="infoPropriedade">
+                         <h5 id="localizacão">Rubim,Centro</h5>
+                         <h5 class="preco">R$</h5>
+                         <div id="avaliação">
+                         </div>
+                    </div>
+               </div>
+
+               <div class="propriedadeIcone">
+                    <div class="divfotoPropriedade">
+                         <img class="propriedadeImg"
+                              src="https://upload.wikimedia.org/wikipedia/commons/0/09/Casa_de_Adobe_na_Chapada_das_Mesas.jpg"
+                              alt="">
+                    </div>
+                    <div class="infoPropriedade">
+                         <h5 id="localizacão">Rubim,Centro</h5>
+                         <h5 class="preco">R$</h5>
+                         <div id="avaliação">
+                         </div>
+                    </div>
+               </div>
+
+          </div>
+          <div id="div-mapa">
+               <iframe
+                    id="mapa"
+                    height="70vh"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15327.831923101405!2d-40.70285709106272!3d-16.171117101337252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x74979961c82b1f7%3A0x4d9a84f8c544fd92!2sAlmenara%2C%20MG%2C%2039900-000!5e0!3m2!1spt-BR!2sbr!4v1743125215754!5m2!1spt-BR!2sbr">
+               </iframe>
           </div>
      </div>
 
@@ -265,6 +134,7 @@
 <script>
      //pode tirar dps
      let botao = document.getElementById('botaoAddNovoImovel');
-     botao.addEventListener('click', () => {window.location.href="../cadastrar_imovel/cadastrar_imovel.html"})
+     botao.addEventListener('click', () => { window.location.href = "../cadastrar_imovel/cadastrar_imovel.html" })
 </script>
+
 </html>
