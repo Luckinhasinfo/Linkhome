@@ -24,17 +24,17 @@ create table telefone(
     numero INT
 );
 create table endereco(
-    id_enedereco INT AUTO_INCREMENT PRIMARY KEY,
+    id_endereco INT AUTO_INCREMENT PRIMARY KEY,
     logradouro varchar(130) NOT NULL,
     cidade varchar(50) NOT NULL,
     bairro varchar(100) NOT NULL,
-    numero INT NOT NULL,
+    numero INT NOT NULL
 );
 create table cliente(
-  id_Cliente INT PRIMARY key NOTNULL,
-  nome varchar(150) notnull, 
-  dt_nasc DATE NOTNULL,
-  notaCliente FLOAT(1)
+  id_Cliente INT PRIMARY key NOT NULL,
+  nome varchar(150) NOT NULL, 
+  dt_nasc DATE NOT NULL,
+  notaCliente FLOAT(1)
 );
 
 CREATE TABLE telefone (
