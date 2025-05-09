@@ -58,36 +58,39 @@
      <img src="../imagens/casa-isolada-no-campo_1303-23773.avif" id="casa_fundo">
      <div id="dadosProprietario" class="position-absolute top-50 start-50 translate-middle">
           <h4 class="position-absolute top-0 start-50 translate-middle-x">Dados da Propriedade</h4>
-     
+     <!--Botao da foto de perfil-->
           <button id="botao_foto_perfil">
                <img src="../imagens/baixar.svg" alt="upload" id="baixar_icone" width="75px" heigth="75px">
                <p id="texto_foto_perfil">Faça um upload da foto da sua residência</p>
           </button>
           <form method=POST id="form-ci">
+               <!--CEP-->
                <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">CEP</span>
                     <input type="text" class="form-control" aria-label="Sizing example input"
                          aria-describedby="inputGroup-sizing-default"
-                         id='cadastro_imovel_cep'>
+                         id='imovel_cep'>
                </div>
-
+               <!--Bairro-->
                <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Bairro</span>
                     <input type="text" class="form-control" aria-label="Sizing example input"
                          aria-describedby="inputGroup-sizing-default"
-                         id='cadastro_imovel_bairro'>
+                         id='imovel_bairro'>
                </div>
+               <!--Número-->
                <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Nº</span>
                     <input type="text" class="form-control" aria-label="Sizing example input"
                          aria-describedby="inputGroup-sizing-default"
-                         id='cadastro_imovel_numero'>
+                         id='imovel_numero'>
                </div>
+               <!--Logradouro-->
                <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Logradouro</span>
                     <input type="text" class="form-control" aria-label="Sizing example input"
                          aria-describedby="inputGroup-sizing-default"
-                         id='cadastro_imovel_logradouro'>
+                         id='imovel_logradouro'>
                </div>
           </form>
      </div>
