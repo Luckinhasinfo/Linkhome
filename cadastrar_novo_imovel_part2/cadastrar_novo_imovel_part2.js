@@ -6,4 +6,4 @@ function enviarForm{
     let selectBanheiros = document.getElementById('selectBanheiros');
     let selectedTextBanheiros = selectBanheiros.text;
 };
-let array =array[0]
+

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <script src="https://kit.fontawesome.com/840f3f7dde.js" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="../files_padrao/css_padrao.css">
+     <title>LinkHome</title>
+</head>
+<link rel="stylesheet" href="cadastrar_novo_imovel_part3.css">
+
+<body>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+          </script>
+     <div class="position-absolute top-0 start-0" id="divVoltar">
+          <button id="buttonVoltar">
+               <img src="../imagens/seta_voltar.svg" alt="seta" id="seta_voltar">
+          </button>
+          <h3 id="textVoltar">Voltar</h3>
+     </div>
+     <div class="position-absolute start-50 translate-middle" id="divtitulo">
+          <h1 id="h1titulo">Adicione seu Imóvel</h1>
+     </div>
+     <div id="divOpcoes">
+          <div id="divDefinirLocal">
+               <span id="paisAtual">BRL</span>
+               <button id="btnDefinirLocal">
+                    <div id="divImgPais">
+                         <img id="imgPais" src="../imagens/brasil.jpeg">
+                    </div>
+               </button>
+          </div>
+
+          <!--NAO APAGAR PERFIL-->
+          <div id="divPerfil">
+               <button id="btnPerfil" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i
+                         class="fa-solid fa-user">
+                    </i>
+               </button>
+          </div>
+          <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+               aria-labelledby="offcanvasWithBothOptionsLabel">
+               <div class="offcanvas-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+               </div>
+               <div class="offcanvas-body iframe_perfil">
+                    <iframe src="../user/user.html" width="100%" height="100%"></iframe>
+               </div>
+          </div>
+          <!--NAO APAGAR PERFIL-->
+     </div>
+
+     <img src="../imagens/casa-isolada-no-campo_1303-23773.avif" id="casa_fundo">
+     <div id="dadosProprietario" class="position-absolute top-50 start-50 translate-middle">
+          <h4 class="position-absolute top-0 start-50 translate-middle-x">Informações adicionais</h4>
+          <form method=POST id="form-ci">
+               <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Freezer" id="flexCheckDefault" name="checkbox">
+                    <label class="form-check-label" for="flexCheckDefault">
+                         Freezer
+                    </label>
+               </div>
+               <div class="form-check">
+                    <input name="checkbox" class="form-check-input" type="checkbox" value="Fogao"   id="flexCheckDefault2">
+                    <label class="form-check-label" for="flexCheckDefault2">
+                         Fogão
+                    </label>
+               </div>
+               <div class="form-check">
+                    <input name="checkbox" class="form-check-input" type="checkbox" value="Televisao" id="flexCheckDefault3">
+                    <label class="form-check-label" for="flexCheckDefault3">
+                         Televisão
+                    </label>
+               </div>
+               <div class="form-check">
+                    <input name="checkbox" class="form-check-input" type="checkbox" value="Garagem" id="flexCheckDefault4">
+                    <label class="form-check-label" for="flexCheckDefault4">
+                         Garagem
+                    </label>
+               </div>
+               <div class="form-check">
+                    <input name="checkbox" class="form-check-input" type="checkbox" value="Ar_condicionado" id="flexCheckDefault5">
+                    <label class="form-check-label" for="flexCheckDefault5">
+                         Ar-Condicionado
+                    </label>
+               </div>
+               <div class="form-check">
+                    <input name="checkbox" class="form-check-input" type="checkbox" value="Wi_fi" id="flexCheckDefault6">
+                    <label class="form-check-label" for="flexCheckDefault6">
+                         Wi-Fi
+                    </label>
+               </div>
+               <div class="form-check">
+                    <input name="checkbox" class="form-check-input" type="checkbox" value="MáquinaDeLavar" id="flexCheckDefault7">
+                    <label class="form-check-label" for="flexCheckDefault7">
+                         Máquina de lavar
+                    </label>
+               </div>
+               <div class="form-check">
+                    <input name="checkbox" class="form-check-input" type="checkbox" value="Geladeira" id="flexCheckDefault8">
+                    <label class="form-check-label" for="flexCheckDefault8">
+                         Geladeira
+                    </label>
+               </div>
+
+          </form>
+     </div>
+     <button id="botaoProximo" class="position-absolute bottom-0 end-0">
+          Finalizar <img src="../imagens/seta_voltar.svg" alt="seta" id="seta_proximo" width="40px" height="40px">
+     </button>
+
+
+</body>
+<script src="../files_padrao/js_padrao.js"></script>
+<script>
+     //pode tirar dps
+     let botao = document.getElementById('botaoProximo');
+     botao.addEventListener('click', () => { window.location.href = "../meus_imoveis/meus_imoveis.html" })
+</script>
+<script src="cadastrar_novo_imovel_part3.js"></script>
+
+</html>
