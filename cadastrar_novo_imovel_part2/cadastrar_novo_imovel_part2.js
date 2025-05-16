@@ -1,13 +1,13 @@
-function enviarForm{
+function enviarForm(){
     let selectComodos = document.getElementById('selectComodos');
     let selectedTextComodos = selectComodos.text;
     let selectCamas = document.getElementById('selectCamas');
     let selectedTextCamas = selectCamas.text;
     let selectBanheiros = document.getElementById('selectBanheiros');
     let selectedTextBanheiros = selectBanheiros.text;
-    let selectQuartos = document.getElementById(`selectQuartos`)/
-    let selectQuartos = selectQuartos.text;
-    let valorProprietario = parseFloat(document.getElementById('idValorProprietario'.value));
+//     let selectQuartos = document.getElementById(`selectQuartos`)/
+//     let selectQuartos = selectQuartos.text;
+//     let valorProprietario = parseFloat(document.getElementById('idValorProprietario'.value));
 };
 
 function inputColect (value, get) {
