@@ -9,5 +9,7 @@ function enviarForm(){
             }
         }
     }
-let btn = document.getElementById("botaoProximo");
-btn.addEventListener('click',enviarForm());
+let botao = document.getElementById("botaoProximo");
+botao.addEventListener('click',enviarForm());
+
+botao.addEventListener('click', () => { window.location.href = "../meus_imoveis/meus_imoveis.html" })

@@ -59,7 +59,7 @@
           <h4 class="position-absolute top-0 start-50 translate-middle-x">Dados da Propriedade</h4>
           <form method=POST id="form-ci">
                <div class="input-group mb-3">
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" id="selectComodos" aria-label="Default select example">
                          <option value="erro_comodos" selected>Quantidade de cômodos</option>
                          <option value="0">0</option>
                          <option value="1">1</option>
@@ -74,7 +74,7 @@
                     </select>
                </div>
                <div class="input-group mb-3">
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" id="selectCamas" aria-label="Default select example">
                          <option value="erro_camas" selected>Quantidade de camas</option>
                          <option value="0">0</option>
                          <option value="1">1</option>
@@ -89,7 +89,7 @@
                     </select>
                </div>
                <div class="input-group mb-3">
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" id="selectBanheiros" aria-label="Default select example">
                          <option value="erro_banheiros" selected>Quantidade de banheiros</option>
                          <option value="0">0</option>
                          <option value="1">1</option>
@@ -104,7 +104,7 @@
                     </select>
                </div>
                <div class="input-group mb-3">
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" id="selectQuartos" aria-label="Default select example">
                          <option value="erro_quartos" selected>Quantidade de quartos</option>
                          <option value="0">0</option>
                          <option value="1">1</option>
@@ -118,7 +118,7 @@
                          <option value="9_mais">9+</option>
                     </select>
                </div>
-               <div class="input-group mb-3">
+               <div class="input-group mb-3" id="idValorProprietario">
                     <span class="input-group-text">Valor do proprietário</span>
                     <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
                     <span class="input-group-text">.99</span>
@@ -132,10 +132,5 @@
 
 </body>
 <script src="../files_padrao/js_padrao.js"></script>
-<script>
-     //pode tirar dps
-     let botao = document.getElementById('botaoProximo');
-     botao.addEventListener('click', () => { window.location.href = "../cadastrar_novo_imovel_part3/cadastrar_novo_imovel_part3.html" })
-</script>
 <script src="cadastrar_novo_imovel_part2.js"></script>
 </html>
