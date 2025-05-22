@@ -9,6 +9,11 @@ function enviarForm(){
 //     let selectQuartos = selectQuartos.text;
 //     let valorProprietario = parseFloat(document.getElementById('idValorProprietario'.value));
 };
+let json_form_comodos = {
+    comodos : selectedTextComodos,
+    camas : selectedTextCamas,
+    banheiros : selectedTextBanheiros
+};
 
 function inputColect (value, get) {
     let value = document.getElementById(get).selectComodos.text;
