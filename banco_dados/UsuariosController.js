@@ -1,4 +1,4 @@
-const db = require('bd_config');
+const db = require('./bd_config');
 
 // Lista todos os usuários
 

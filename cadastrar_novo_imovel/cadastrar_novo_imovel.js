@@ -4,5 +4,5 @@ let imovel_numero = document.getElementById('imovel_numero').value;
 let imovel_logradouro = document.getElementById('imovel_logradouro').value;
 
 
-let botao = document.getElementById('botaoProximo');
-botao.addEventListener('click', () => { window.location.href = "../cadastrar_novo_imovel_part2/cadastrar_novo_imovel_part2.html" })
+// let botao = document.getElementById('botaoProximo');
+// botao.addEventListener('click', () => { window.location.href = "../cadastrar_novo_imovel_part2/cadastrar_novo_imovel_part2.html" })
