@@ -1,3 +1,4 @@
+-- SQLBook: Code
 CREATE table proprietario(
     cpf CHAR(11) PRIMARY KEY NOT NULL,
     nome VARCHAR(90) NOT NULL,
