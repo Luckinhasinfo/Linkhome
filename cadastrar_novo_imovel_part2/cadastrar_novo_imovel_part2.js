@@ -1,25 +1,35 @@
-function enviarForm(){
-    let selectComodos = document.getElementById('selectComodos');
-    let selectedTextComodos = selectComodos.text;
-    let selectCamas = document.getElementById('selectCamas');
-    let selectedTextCamas = selectCamas.text;
-    let selectBanheiros = document.getElementById('selectBanheiros');
-    let selectedTextBanheiros = selectBanheiros.text;
-//     let selectQuartos = document.getElementById(`selectQuartos`)/
-//     let selectQuartos = selectQuartos.text;
-//     let valorProprietario = parseFloat(document.getElementById('idValorProprietario'.value));
-};
-let json_form_comodos = {
-    comodos : selectedTextComodos,
-    camas : selectedTextCamas,
-    banheiros : selectedTextBanheiros
-};
+const form = document.getElementById('enviar_form');
 
-function inputColect (value, get) {
-    let value = document.getElementById(get).selectComodos.text;
-};
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const comodos = document.getElementById('selectComodos').value;
+    const camas = document.getElementById('selectCamas').value;
+    const banheiros = document.getElementById('selectBanheiros').value;
+    const quartos = document.getElementById('selectQuartos').value;
+    const valorProprietario = parseFloat(document.getElementById('idValorProprietario').value);
+
+    const dados = {
+      comodos,
+      camas,
+      banheiros,
+      quartos,
+      valorProprietario
+    };
+
+    const resposta = await fetch('/enviar-json', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(dados)
+    });
+
+    const mensagem = await resposta.text();
+    alert(mensagem);
+  });
+</script>
 
 let botao = document.getElementById('botaoProximo');
 botao.addEventListener('click', enviarForm());
 botao.addEventListener('click', () => { window.location.href = "../cadastrar_novo_imovel_part3/cadastrar_novo_imovel_part3.html" })
-
