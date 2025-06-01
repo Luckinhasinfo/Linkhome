@@ -22,7 +22,7 @@ function cadastrarUsuario() {
         return;
     }
     enviarCadastro(email, cpf, senha, telefone, dataNascimento);
-  
+    
 }
 
 

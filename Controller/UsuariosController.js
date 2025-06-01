@@ -1,4 +1,4 @@
-const db = require('./bd_config');
+const db = require('../banco_dados/bd_config');
 
 // Lista todos os usuários
 
@@ -20,15 +20,25 @@ exports.buscarPorId = (req, res) => {
 };
 
 // Cadastra um novo usuário
-exports.cadastrar = (req, res) => { //req = oq a pessoa mandou, res = o obj da resposta da pessoa
-    const { nome, email } = req.body; //
-    if (!nome || !email) return res.status(400).json({ erro: 'Nome e email são obrigatórios.' });// se algo der errado manda msg de erro
+exports.cadastrar = (req, res) => {
+  console.log('Recebi dados para cadastro:', req.body);
 
-    const sql = 'INSERT INTO usuarios (nome, email) VALUES (?, ?)'; //comando sql basico ?? é pq o valor é desconhecido 
-    db.query(sql, [nome, email], (erro, resultado) => {
-        if (erro) return res.status(500).json({ erro: 'Erro ao cadastrar usuário.' }); // se algo der errado manda msg de erro
-        res.status(201).json({ mensagem: 'Usuário cadastrado com sucesso!', id: resultado.insertId });
-    });
+  const { email, cpf, senha, telefone, data_nascimento } = req.body;
+
+  if (!email || !cpf || !senha || !telefone || !data_nascimento) {
+    return res.status(400).json({ erro: 'Todos os campos são obrigatórios.' });
+  }
+
+  const sql = 'INSERT INTO usuarios (email, cpf, senha, telefone, data_nascimento) VALUES (?, ?, ?, ?, ?)';
+
+  db.query(sql, [email, cpf, senha, telefone, data_nascimento], (erro, resultado) => {
+    if (erro) {
+      console.error('Erro ao cadastrar:', erro);
+      return res.status(500).json({ erro: 'Erro ao cadastrar usuário.' });
+    }
+
+    res.status(201).json({ mensagem: 'Usuário cadastrado com sucesso!', id: resultado.insertId });
+  });
 };
 
 // Atualiza um usuário

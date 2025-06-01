@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const arquivo_controle = require('./UsuariosController');
+const arquivo_controle = require('../Controller/UsuariosController');
 
 router.get('/', arquivo_controle.listar);
 router.get('/:id', arquivo_controle.buscarPorId);

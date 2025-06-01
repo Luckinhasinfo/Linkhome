@@ -1,24 +1,24 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const app = express();//pense nisso como o servidor
+const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-const usuariosRouter = require('./banco_dados/usuarios'); // Importa o arquivo de rotas
+const usuariosRouter = require('./routers/usuarios');
+app.use('/usuarios', usuariosRouter);
 
-app.use('/usuarios', usuariosRouter); // Define a rota base para usuários
-
+const cadastroImovelrouter =require('./routers/cadastrar_imovel_part2_router');
+app.use('/cadastrar_imovel_part2_router', cadastroImovelrouter);
 app.use(express.static(path.join(__dirname, '..')));
 
-
-const PORT = 3000; //coloquei a 3000 mas quem quiser muda
+const PORT = 3000;
 
 app.get('/', (req, res) => {
      res.send('Servidor funcionando com sucesso!');
-});//testa a porra do serv
+});
 
 app.listen(PORT, () => {
-     console.log(Servidor rodando na porta ${PORT});
-});//roda o serv
+     console.log(`Servidor rodando na porta ${PORT}`);
+});
