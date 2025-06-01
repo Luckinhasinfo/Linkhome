@@ -11,6 +11,11 @@ app.use('/usuarios', usuariosRouter);
 
 const cadastroImovelrouter =require('./routers/cadastrar_imovel_part2_router');
 app.use('/cadastrar_imovel_part2_router', cadastroImovelrouter);
+
+const loginInicialRouter =require('./routers/login_inicial_router');
+app.use('/login_inicial_router', loginInicialRouter);
+
+
 app.use(express.static(path.join(__dirname, '..')));
 
 const PORT = 3000;

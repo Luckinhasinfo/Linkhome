@@ -14,8 +14,6 @@ function cadastroDadosPropriedade() {
   ) {
     alert('Preencha todos os campos corretamente!');
     return;
-  }else{
-    
   }
 
   enviarDados(comodos, camas, banheiros, quartos, valorProprietario);
