@@ -10,7 +10,7 @@ function loginAccess() {
 }
 async function enviarDados(floatingEmail, floatingSenha) {
     try {
-        const resposta = await fetch('http://localhost:3000/login_inicial_router', {
+        const resposta = await fetch('http://localhost:3000/login_inicial_router/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

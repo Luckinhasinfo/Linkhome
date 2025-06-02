@@ -1,4 +1,4 @@
-let botCadastro = document.getElementById('buttonCadastro');
+let botCadastro = document.getElementById('botCadastro');
 botCadastro.addEventListener('click', cadastrarUsuario);
 
 
