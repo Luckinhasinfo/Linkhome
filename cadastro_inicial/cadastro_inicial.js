@@ -1,3 +1,4 @@
+
 let botCadastro = document.getElementById('botCadastro');
 botCadastro.addEventListener('click', cadastrarUsuario);
 
@@ -14,9 +15,6 @@ function cadastrarUsuario() {
         alert("As senhas não coincidem.");
         return;
     }
-
-
-
     if ( !email || !cpf || !senha || !telefone || !dataNascimento) {
         alert("Por favor, preencha todos os campos.");
         return;
