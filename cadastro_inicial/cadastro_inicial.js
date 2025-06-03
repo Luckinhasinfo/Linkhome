@@ -33,7 +33,7 @@ async function enviarCadastro(email, cpf, senha, telefone, dataNascimento) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-       email: email,
+        email: email,
         cpf:cpf,
         senha:senha,
         telefone: telefone,

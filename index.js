@@ -15,6 +15,9 @@ app.use('/cadastrar_imovel_part2_router', cadastroImovelrouter);
 const loginInicialRouter =require('./routers/login_inicial_router');
 app.use('/login_inicial_router', loginInicialRouter);
 
+const cadastroImovelPart3Router = require('./routers/cadastrar_imovel_part3_router');
+app.use('/cadastrar_imovel_part3_router', cadastroImovelPart3Router);
+
 
 app.use(express.static(path.join(__dirname, '..')));
 
