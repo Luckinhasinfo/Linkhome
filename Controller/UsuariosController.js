@@ -1,5 +1,5 @@
 const db = require('../banco_dados/bd_config');
-
+const bcrypt = require('bcrypt');
 // Lista todos os usuários
 
 exports.listar = (req, res) => {
@@ -20,25 +20,31 @@ exports.buscarPorId = (req, res) => {
 };
 
 // Cadastra um novo usuário
-exports.cadastrar = (req, res) => {
+exports.cadastrar = async (req, res) => {
   console.log('Recebi dados para cadastro:', req.body);
 
-  const { email, cpf, senha, telefone, data_nascimento } = req.body;
-
-  if (!email || !cpf || !senha || !telefone || !data_nascimento) {
-    return res.status(400).json({ erro: 'Todos os campos são obrigatórios.' });
-  }
-
-  const sql = 'INSERT INTO usuarios (email, cpf, senha, telefone, data_nascimento) VALUES (?, ?, ?, ?, ?)';
-
-  db.query(sql, [email, cpf, senha, telefone, data_nascimento], (erro, resultado) => {
-    if (erro) {
-      console.error('Erro ao cadastrar:', erro);
-      return res.status(500).json({ erro: 'Erro ao cadastrar usuário.' });
+  try {
+    const { email, cpf, senha, telefone, data_nascimento } = req.body;
+    if (!email || !cpf || !senha || !telefone || !data_nascimento) {
+      return res.status(400).json({ erro: 'Todos os campos são obrigatórios.' });
     }
+    // Use um valor fixo para saltRounds
+    const saltRounds = 10;
+    const senhaHash = await bcrypt.hash(senha, saltRounds);
 
-    res.status(201).json({ mensagem: 'Usuário cadastrado com sucesso!', id: resultado.insertId });
-  });
+    const sql = 'INSERT INTO usuarios (email, cpf, senha, telefone, data_nascimento) VALUES (?, ?, ?, ?, ?)';
+
+    db.query(sql, [email, cpf, senhaHash, telefone, data_nascimento], (erro, resultado) => {
+      if (erro) {
+        console.error('Erro ao cadastrar:', erro);
+        return res.status(500).json({ erro: 'Erro ao cadastrar usuário.' });
+      }
+
+      res.status(201).json({ mensagem: 'Usuário cadastrado com sucesso!', id: resultado.insertId });
+    });
+  } catch (erro) {
+    res.status(500).json({ erro: 'Erro interno no servidor.' });
+  }
 };
 
 // Atualiza um usuário
