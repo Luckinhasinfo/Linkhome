@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../Controller/cadastrar_novo_imovel_part2_Controller');
 
+
 // Listar todos os imóveis
 router.get('/', controller.listar);
 

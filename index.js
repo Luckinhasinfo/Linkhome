@@ -9,11 +9,14 @@ app.use(express.json());
 const usuariosRouter = require('./routers/usuarios');
 app.use('/usuarios', usuariosRouter);
 
-const cadastroImovelrouter =require('./routers/cadastrar_imovel_part2_router');
-app.use('/cadastrar_imovel_part2_router', cadastroImovelrouter);
+const cadastroImovelPart2Router =require('./routers/cadastrar_imovel_part2_router');
+app.use('/cadastrar_imovel_part2_router', cadastroImovelPart2Router);
 
 const loginInicialRouter =require('./routers/login_inicial_router');
 app.use('/login_inicial_router', loginInicialRouter);
+
+const cadastroImovelRouter = require('./routers/cadastrar_imovel_router');
+app.use('/cadastrar_imovel_router', cadastroImovelRouter);
 
 const cadastroImovelPart3Router = require('./routers/cadastrar_imovel_part3_router');
 app.use('/cadastrar_imovel_part3_router', cadastroImovelPart3Router);
