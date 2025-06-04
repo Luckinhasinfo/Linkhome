@@ -6,7 +6,8 @@ function pegar_dados() {
      let files = document.getElementById('foto_imovel').files;
      let files_name = '';
      for (let i = 0; i < files.length; i++) {
-          files_name += `${files[i].name};`//lembra de tipo sanitizar o nome do arquivo pra evitar de ter ; no nome do proprio arqu
+          let nomeSanitizado = files[i].name.replace(/;/g, '');
+          files_name += `${nomeSanitizado};`//lembra de tipo sanitizar o nome do arquivo pra evitar de ter ; no nome do proprio arqu
      }
      console.log(files_name);
      if (
