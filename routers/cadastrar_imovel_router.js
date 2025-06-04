@@ -7,7 +7,7 @@ const path = require('path');
 // Configuração do multer para salvar as imagens na pasta 'imagens'
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, path.join(__dirname, '../imagens'));
+        cb(null, path.join(__dirname, '../imagens_imoveis'));
     },
     filename: function (req, file, cb) {
         cb(null, Date.now() + '-' + file.originalname);
