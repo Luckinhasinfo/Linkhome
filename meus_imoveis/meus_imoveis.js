@@ -24,7 +24,7 @@ async function carregarProdutosNovos() {
       // Verifica imagens 
       const imagens = imovel.files_name ? imovel.files_name.split(';').filter(Boolean) : [];
       const primeiraImagem = imagens.length > 0 ? imagens[0] : console.log('nao achou');
-
+     
       const colDiv = document.createElement('div');
       colDiv.className = 'propriedadeIcone';
       colDiv.id = imovel.id;

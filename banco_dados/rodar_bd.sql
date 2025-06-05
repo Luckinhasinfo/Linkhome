@@ -8,7 +8,7 @@ CREATE TABLE cadastrar_imovel (
     imovel_numero INT NOT NULL,
     imovel_logradouro VARCHAR(130) NOT NULL,
     descricao VARCHAR(500) NOT NULL,
-    files_name VARCHAR(255),
+    files_name VARCHAR(1000),
     comodos INT NOT NULL,
     camas INT NOT NULL,
     banheiros INT NOT NULL,
