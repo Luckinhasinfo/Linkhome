@@ -25,8 +25,6 @@ async function enviarDados(floatingEmail, floatingSenha) {
         if (resposta.ok) {
             alert('Login realizado com sucesso!');
             //´pra slavar o cfp e fds
-            
-             sessionStorage.setItem('cpf', resultado[0].cpf);
           window.location.href = "../reservar_imovel/reservar_imovel.html";
         } else {
             alert('Erro: ' + resultado.erro);

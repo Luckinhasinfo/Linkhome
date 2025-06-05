@@ -29,6 +29,7 @@ async function carregarProdutosNovos() {
       const botDelete = document.createElement('button');
       colDiv.className = 'propriedadeIcone';
       colDiv.id = imovel.id;
+      colDiv.onclick = () => abrirInfoImovel(colDiv.id);
       colDiv.innerHTML = `
         <div class="fotoPropriedade" >
           <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg">
@@ -80,7 +81,7 @@ window.deletarImovel = deletarImovel; // Torna a função global para uso no onc
 function abrirInfoImovel(idImovel){
    sessionStorage.clear();
    sessionStorage.setItem("idimovel", idImovel);
-   window.location.href = "..info_imovel/info_imovel.html";
+   window.location.href = "../info_imovel/info_imovel.html";
 }
 
 
