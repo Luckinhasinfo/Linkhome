@@ -66,3 +66,33 @@ CREATE TABLE usuarios (
     telefone VARCHAR(20) NOT NULL,
     data_nascimento DATE NOT NULL
 );
+
+CREATE TABLE dados_imovel (
+    id int(11) NOT NULL AUTO_INCREMENT,
+    comodos int(11) NOT NULL,
+    camas int(11) NOT NULL,
+    banheiros int(11) NOT NULL,
+    quartos int(11) NOT NULL,
+    valor_proprietario decimal(10, 2) NOT NULL,
+);
+ create table info_adicional( 
+    freezer BOOLEAN,
+    fogao  BOOLEAN,
+    televisao BOOLEAN,
+    garagem BOOLEAN,
+    ar_condicionado BOOLEAN,
+    wifi BOOLEAN,
+    maquina_de_lavar BOOLEAN,
+    geladeira BOOLEAN,
+    id_propriedade INT,
+    FOREIGN key (id_propriedade) REFERENCES propriedade(id_propriedade)
+  );
+
+  CREATE TABLE info_imovel (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    check_in DATE NOT NULL,
+    check_out DATE NOT NULL,
+    numero_hospedes INT NOT NULL,
+    valor_total DECIMAL(10,2) NOT NULL
+);
+-- SQLBook: Code

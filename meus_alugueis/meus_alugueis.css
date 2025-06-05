@@ -1,16 +1,20 @@
-.cabecalho{
-    background-color: rgba(0,0,0, 0.5);
-    height: 170px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#textTitulo{
-    width:100%;
-    text-align: center;
-    font-size: 40px;
 
+#divtitulo{
+    background-color:#9d4edd ;
+    margin-top: 3%;
+    display: flex;
+    position: absolute;
+    text-align: center;
+    padding-top: 40px;
+    height: 100px;
+    width: 300px;
+   
+}
+.cabecalho{
+    background-color:#9d4edd;
+    height: 15%;
+    width: 100%;
+    position: absolute;
 }
 #h1titulo{
     color: #ffffff;
@@ -102,55 +106,42 @@
     margin-top: 7%;
     margin-inline-start: 11%;
 }
-#propriedadesExistentes{
+#propriedadesAlugadas{
+     background: linear-gradient(to bottom, #ffffff 0%, #ecebeb 70%);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+    padding-right: 5%;
+    padding-left: 5%;
+    float: none;
+    top:23%;
+    position: absolute;
     width: 100%;
-    margin-top: 60px;
+    
 }
 .propriedadeIcone{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    background-color: rgb(255, 255, 255) ;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    height: 360px;
+    display: flexbox;
+    margin-top: 9%;
+    border-width: 0px;
+    background-color: #ffffff ;
+    position: relative;
+    width: 300px;
+    height: 320px;
     border-radius: 15px;
+    border-style: solid;
+    
+
 }
-.fotoPropriedade{
+.propriedadeIcone:hover{
+    border-radius: 15px;
+    background-color: #cecece;
+    transition: 0.5s;
+    scale:1.09;
+}
+.divfotoPropriedade{
     border-radius:15px;
     height: 70%;
     width: 100%;
-}
-.infoImoveis{
-    height: 30%;
-    width: 100%; 
-    border-bottom-left-radius: 15%;
-    border-bottom-right-radius: 15%;
-    display: grid;
-    grid-column: 1fr 1fr;
-    grid-template-columns: 70% 30%;
-}
-.endereco{
-    margin-top: 30px;
-    width: 100%;
-    text-align: left;
-    font-weight: 400;
-}
-
-.preco{
-    margin-top: 30px;
-    width: 100%;
-    text-align: right;
-    font-weight: 400;
-}
-
-#botaoAddNovoImovel{
-    width: 250px; 
-    height: 60px;
-    border-radius: 15px;
+    background-color: #FFFFFF;
 }
 
 .propriedadeImg{

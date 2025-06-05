@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../Controller/cadastrar_novo_imovel_Controller');
+const controller = require('../Controller/cadastrar_imovel_Controller');
 const multer = require('multer');
 const path = require('path');
 
-// Configuração do multer para salvar as imagens na pasta 'imagens'
+//configuraçao do multer para salvar as imagens na pasta la tlg
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, path.join(__dirname, '../imagens_imoveis'));
@@ -13,6 +13,7 @@ const storage = multer.diskStorage({
         cb(null, Date.now() + '-' + file.originalname);
     }
 });
+
 const upload = multer({ storage: storage });
 
 // Listar todos os imóveis
@@ -30,7 +31,7 @@ router.put('/:id', controller.atualizar);
 // Excluir imóvel
 router.delete('/:id', controller.excluir);
 
-// ROTA PARA UPLOAD DE IMAGEM
+// ROTA PAA UPLOAD DA IMAGEM
 router.post('/upload', upload.array('fotos_imovel'), (req, res) => {
     if (!req.files || req.files.length === 0) {
         return res.status(400).json({ erro: 'Nenhuma imagem enviada.' });
@@ -38,3 +39,5 @@ router.post('/upload', upload.array('fotos_imovel'), (req, res) => {
     res.status(200).json({ mensagem: 'Imagens enviadas com sucesso!', files: req.files.map(f => f.filename) });
 });
 module.exports = router;
+
+

@@ -26,7 +26,7 @@
         <h3 id="nome_user" class="position-absolute top-0 start-50 translate-middle-x">Pablo Miguel</h3>
         </div>
             <div id="div_inferior" class="btn-group-vertical position-absolute top-50 start-50 translate-middle" role="group" aria-label="Vertical button group">
-                <button type="button" class="btn btn-primary primeiro"><img src="https://img.icons8.com/?size=100&id=77&format=png&color=000000" alt="info_icon" width="20px" heigth="20px"> Informações Pessoais</button>
+                <button type="button" class="btn btn-primary primeiro" id="infoPessoais"><img src="https://img.icons8.com/?size=100&id=77&format=png&color=000000" alt="info_icon" width="20px" heigth="20px"> Informações Pessoais</button>
                 <button type="button" class="btn btn-primary" id="propriedades"><img src="https://img.icons8.com/?size=100&id=73&format=png&color=000000" alt="casa_icon" width="20px" heigth="20px"> Propriedades</button>
                 <button type="button" class="btn btn-primary"><img src="https://img.icons8.com/?size=100&id=HUc1yTz1glkd&format=png&color=000000" alt="cadeado_icon" width="20px" heigth="20px"> Segurança</button>
                 <button type="button" class="btn btn-primary" id="reservar"><img src="https://img.icons8.com/?size=100&id=7554&format=png&color=000000" alt="sino_recepcionista_icon" width="20px" heigth="20px"> Reservar</button>
@@ -43,5 +43,9 @@
           
           let bot_reservar = document.getElementById('reservar');
           bot_reservar.addEventListener('click', () => {window.top.location.href = "../reservar_imovel/reservar_imovel.html"})
+
+let infoPessoais = document.getElementById('infoPessoais');
+          infoPessoais.addEventListener('click', () => {window.top.location.href = "../cadastrar_imovel/cadastrar_imovel.html"})
+
      </script>
 </html>

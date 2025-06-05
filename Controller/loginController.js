@@ -1,5 +1,6 @@
 const db = require('../banco_dados/bd_config');
 const bcrypt = require('bcrypt');
+const session = require('express-session');
 // Lista todos os logins (opcional, se quiser listar todos os usuários)
 exports.listar = (req, res) => {
     db.query('SELECT * FROM usuarios', (erro, resultado) => {
@@ -39,6 +40,7 @@ exports.login = (req, res) => {
         if (!comapareSenha) {
             return res.status(401).json({ mensagem: 'Email ou senha inválidos.' });
         }else{
+            req.session.cpf = resultado[0].cpf;
             res.status(200).json({ mensagem: 'Login realizado com sucesso!', usuario: resultado[0] });
         }
     });
