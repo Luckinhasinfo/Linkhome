@@ -26,21 +26,21 @@ async function carregarProdutosNovos() {
       const primeiraImagem = imagens.length > 0 ? imagens[0] : console.log('nao achou');
 
       const colDiv = document.createElement('div');
+      const botDelete = document.createElement('button');
       colDiv.className = 'propriedadeIcone';
-
+      colDiv.id = imovel.id;
       colDiv.innerHTML = `
-        <div class="fotoPropriedade" id="${imovel.id}">
+        <div class="fotoPropriedade" >
           <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg">
         </div>
         <div class="infoImoveis">
           <div class="endereco">${imovel.imovel_logradouro || 'Endereço não disponível'}, ${imovel.imovel_bairro || ''}</div>
           <div class="preco">R$ ${imovel.valorProprietario ? Number(imovel.valorProprietario) : '0,00'}</div>
           <div class="numCom">${imovel.comodos || 0} cômodos</div>
+          <div class='divExcluir'><div class="botaoDeletar"></div></div>
         </div>
       `;
       container.appendChild(colDiv);
-      let divPropr = document.getElementsByClassName('divPropriedade')[0];
-      divPropr.addEventListener('click', abrirInfoImovel(imovel.id));
     });
 
   } catch (error) {
@@ -56,11 +56,6 @@ async function carregarProdutosNovos() {
   }
 }
 
-function abrirInfoImovel(idImovel){
-   sessionStorage.clear();
-   sessionStorage.setItem("idimovel", idImovel);
-   window.location.href = "..info_imovel/info_imovel.html";
-}
 
 async function deletarImovel(id) {
   if (!confirm('Tem certeza que deseja excluir este imóvel?')) return;
@@ -82,9 +77,11 @@ async function deletarImovel(id) {
 
 window.deletarImovel = deletarImovel; // Torna a função global para uso no onclick
 
-
-
-
+function abrirInfoImovel(idImovel){
+   sessionStorage.clear();
+   sessionStorage.setItem("idimovel", idImovel);
+   window.location.href = "..info_imovel/info_imovel.html";
+}
 
 
 

@@ -39,6 +39,7 @@ exports.login = (req, res) => {
         if (!comapareSenha) {
             return res.status(401).json({ mensagem: 'Email ou senha inválidos.' });
         }else{
+
             res.status(200).json({ mensagem: 'Login realizado com sucesso!', usuario: resultado[0] });
         }
     });

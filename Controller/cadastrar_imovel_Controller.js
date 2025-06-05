@@ -1,6 +1,8 @@
 const db = require('../banco_dados/bd_config');
 // Cadastrar novo imóvel
 exports.cadastrar = (req, res) => {
+  
+
     const {
         cpf_proprietario,
         numero_proprietario,

@@ -5,7 +5,6 @@ const session = require('express-session');
 
 const app = express();
 
-// Sessão deve vir primeiro
 app.use(session({
     secret: 'seuSegredo',
     resave: false,
@@ -13,7 +12,7 @@ app.use(session({
     cookie: {
         secure: false, // só true com HTTPS
         httpOnly: false,
-        sameSite: 'none' // ou 'none' se usar domínios diferentes
+        sameSite: 'lax' // ou 'none' se usar domínios diferentes
     }
 }));
 
