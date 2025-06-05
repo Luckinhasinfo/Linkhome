@@ -11,7 +11,7 @@ exports.listar = (req, res) => {
 // Busca uma reserva por ID
 exports.buscarPorId = (req, res) => {
     const id = req.params.id;
-    db.query('SELECT * FROM reservar_imovel WHERE id = ?', [id], (erro, resultado) => {
+    db.query('SELECT * FROM reservar_imovel WHERE id_reserva = ?', [id], (erro, resultado) => {
         if (erro) return res.status(500).json({ erro: 'Erro ao buscar reserva.' });
         if (resultado.length === 0) return res.status(404).json({ mensagem: 'Reserva não encontrada.' });
         res.status(200).json(resultado[0]);
@@ -20,24 +20,26 @@ exports.buscarPorId = (req, res) => {
 
 // Cadastra uma nova reserva
 exports.cadastrar = (req, res) => {
-    const { numeroHospedes, checkIn, checkOut } = req.body;
+    const { id_usuario, id_imovel, num_hospedes, data_check_in, data_check_out } = req.body;
 
     if (
-        numeroHospedes === undefined ||
-        checkIn === undefined ||
-        checkOut === undefined
+        !id_usuario ||
+        !id_imovel ||
+        !num_hospedes ||
+        !data_check_in ||
+        !data_check_out
     ) {
         return res.status(400).json({ erro: 'Todos os campos são obrigatórios.' });
     }
 
     const sql = `
-        INSERT INTO reservar_imovel (num_hospedes, data_check_in, data_check_out)
-        VALUES (?, ?, ?)
+        INSERT INTO reservar_imovel (id_usuario, id_imovel, num_hospedes, data_check_in, data_check_out)
+        VALUES (?, ?, ?, ?, ?)
     `;
 
     db.query(
         sql,
-        [numeroHospedes, checkIn, checkOut],
+        [id_usuario, id_imovel, num_hospedes, data_check_in, data_check_out],
         (erro, resultado) => {
             if (erro) {
                 console.error('Erro ao cadastrar reserva:', erro);
@@ -51,21 +53,24 @@ exports.cadastrar = (req, res) => {
 // Atualiza uma reserva
 exports.atualizar = (req, res) => {
     const id = req.params.id;
-    const { numeroHospedes, checkIn, checkOut } = req.body;
+    const { id_usuario, id_imovel, num_hospedes, data_check_in, data_check_out } = req.body;
+
     if (
-        numeroHospedes === undefined ||
-        checkIn === undefined ||
-        checkOut === undefined
+        !id_usuario ||
+        !id_imovel ||
+        !num_hospedes ||
+        !data_check_in ||
+        !data_check_out
     ) {
         return res.status(400).json({ erro: 'Todos os campos são obrigatórios.' });
     }
 
     const sql = `
         UPDATE reservar_imovel
-        SET numero_hospedes = ?, check_in = ?, check_out = ?
-        WHERE id = ?
+        SET id_usuario = ?, id_imovel = ?, num_hospedes = ?, data_check_in = ?, data_check_out = ?
+        WHERE id_reserva = ?
     `;
-    db.query(sql, [numeroHospedes, checkIn, checkOut, id], (erro, resultado) => {
+    db.query(sql, [id_usuario, id_imovel, num_hospedes, data_check_in, data_check_out, id], (erro, resultado) => {
         if (erro) return res.status(500).json({ erro: 'Erro ao atualizar reserva.' });
         if (resultado.affectedRows === 0) return res.status(404).json({ mensagem: 'Reserva não encontrada.' });
         res.status(200).json({ mensagem: 'Reserva atualizada com sucesso.' });
@@ -75,7 +80,7 @@ exports.atualizar = (req, res) => {
 // Exclui uma reserva
 exports.excluir = (req, res) => {
     const id = req.params.id;
-    db.query('DELETE FROM reservar_imovel WHERE id = ?', [id], (erro, resultado) => {
+    db.query('DELETE FROM reservar_imovel WHERE id_reserva = ?', [id], (erro, resultado) => {
         if (erro) return res.status(500).json({ erro: 'Erro ao excluir reserva.' });
         if (resultado.affectedRows === 0) return res.status(404).json({ mensagem: 'Reserva não encontrada.' });
         res.status(200).json({ mensagem: 'Reserva excluída com sucesso.' });

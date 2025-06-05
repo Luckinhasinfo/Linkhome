@@ -119,20 +119,19 @@ async function carregarInfoImovelPorId() {
 
 
 function pegar_dados() {
-  let checkIn = document.getElementById("data");
-  let checkOut = document.getElementById("data1");
+  let checkIn = document.getElementById("data").value;
+  let checkOut = document.getElementById("data1").value;
   let numeroHospedes = document.getElementById("selecionarNum").value;
   const idImovel = sessionStorage.getItem('idimovel');
   const idImovelNum = Number(idImovel);
-  const idUS = localStorage.getItem('cpfUsuario');
-  console.log(idUS);
+  const idUsuario = localStorage.getItem('cpfUsuario');
 
-  if (checkIn === '' || checkOut === '' || numeroHospedes === '' || idImovelNum === null || idImovelNum === undefined || idImovelNum === '') {
+  if (checkIn === '' || checkOut === '' || numeroHospedes === '' || idImovelNum === null || idImovelNum === ''|| idUsuario === null || idUsuario === '') {
     alert('Preencha todos os campos corretamente!');
     return;
 }
   else {
-    enviarDados(idImovelNum,checkIn, checkOut, numeroHospedes);
+    enviarDados(idUsuario,idImovelNum,checkIn, checkOut, numeroHospedes);
   }
 }
 
@@ -143,10 +142,11 @@ async function enviarDados(idUsuario, idImovel, checkIn, checkOut, numeroHospede
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        idImovel: idImovel,
-        checkIn: checkIn,
-        checkOut: checkOut,
-        numeroHospedes: numeroHospedes
+        id_usuario: idUsuario,
+        id_imovel: idImovel,
+        data_check_in: checkIn,
+        data_check_out: checkOut,
+        num_hospedes: numeroHospedes
       })
     });
 
@@ -162,6 +162,9 @@ async function enviarDados(idUsuario, idImovel, checkIn, checkOut, numeroHospede
     alert('Erro inesperado: ' + error.message);
   }
 }
+let checkIn = document.getElementById("data");
+let checkOut = document.getElementById("data1");
+console.log(checkIn, checkOut);
 
 let botao = document.getElementById('botaoReservar');
 botao.addEventListener('click', pegar_dados);
