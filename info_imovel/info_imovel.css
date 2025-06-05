@@ -335,7 +335,6 @@ body{
     margin-right: 20%;
     border-radius: 10px;
     border: 1px solid black;
-    height: auto;
     display: flex;
     min-height: 200px;
 }

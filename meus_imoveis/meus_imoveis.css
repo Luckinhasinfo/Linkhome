@@ -177,3 +177,14 @@
   width: 30px;
   height: 30px;
 }
+.divEditar{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content:center;
+}
+.botaoEditar{
+  background-color: blue;
+  width: 30px;
+  height: 30px;
+}

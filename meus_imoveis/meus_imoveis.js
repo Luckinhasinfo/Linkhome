@@ -26,7 +26,6 @@ async function carregarProdutosNovos() {
       const primeiraImagem = imagens.length > 0 ? imagens[0] : console.log('nao achou');
 
       const colDiv = document.createElement('div');
-      const botDelete = document.createElement('button');
       colDiv.className = 'propriedadeIcone';
       colDiv.id = imovel.id;
       colDiv.onclick = () => abrirInfoImovel(colDiv.id);
@@ -38,6 +37,7 @@ async function carregarProdutosNovos() {
           <div class="endereco">${imovel.imovel_logradouro || 'Endereço não disponível'}, ${imovel.imovel_bairro || ''}</div>
           <div class="preco">R$ ${imovel.valorProprietario ? Number(imovel.valorProprietario) : '0,00'}</div>
           <div class="numCom">${imovel.comodos || 0} cômodos</div>
+          <div class='divEditar'><div class="botaoEditar"></div></div>
           <div class='divExcluir'><div class="botaoDeletar"></div></div>
         </div>
       `;

@@ -2,7 +2,7 @@ const db = require('../banco_dados/bd_config');
 
 // Lista todas as reservas
 exports.listar = (req, res) => {
-    db.query('SELECT * FROM imovel_reserva', (erro, resultado) => {
+    db.query('SELECT * FROM cadastrar_imovel', (erro, resultado) => {
         if (erro) return res.status(500).json({ erro: 'Erro ao buscar reservas.' });
         res.status(200).json(resultado);
     });
@@ -11,7 +11,7 @@ exports.listar = (req, res) => {
 // Busca uma reserva por ID
 exports.buscarPorId = (req, res) => {
     const id = req.params.id;
-    db.query('SELECT * FROM info_imovel WHERE id = ?', [id], (erro, resultado) => {
+    db.query('SELECT * FROM cadastrar_imovel WHERE id = ?', [id], (erro, resultado) => {
         if (erro) return res.status(500).json({ erro: 'Erro ao buscar reserva.' });
         if (resultado.length === 0) return res.status(404).json({ mensagem: 'Reserva não encontrada.' });
         res.status(200).json(resultado[0]);
@@ -31,7 +31,7 @@ exports.cadastrar = (req, res) => {
     }
 
     const sql = `
-        INSERT INTO imovel_reserva (numero_hospedes, check_in, check_out)
+        INSERT INTO cadastrar_imovel (numero_hospedes, check_in, check_out)
         VALUES (?, ?, ?)
     `;
 
@@ -61,7 +61,7 @@ exports.atualizar = (req, res) => {
     }
 
     const sql = `
-        UPDATE imovel_reserva
+        UPDATE cadastrar_imovel
         SET numero_hospedes = ?, check_in = ?, check_out = ?
         WHERE id = ?
     `;
@@ -75,7 +75,7 @@ exports.atualizar = (req, res) => {
 // Exclui uma reserva
 exports.excluir = (req, res) => {
     const id = req.params.id;
-    db.query('DELETE FROM imovel_reserva WHERE id = ?', [id], (erro, resultado) => {
+    db.query('DELETE FROM cadastrar_imovel WHERE id = ?', [id], (erro, resultado) => {
         if (erro) return res.status(500).json({ erro: 'Erro ao excluir reserva.' });
         if (resultado.affectedRows === 0) return res.status(404).json({ mensagem: 'Reserva não encontrada.' });
         res.status(200).json({ mensagem: 'Reserva excluída com sucesso.' });

@@ -1,9 +1,10 @@
-const API_URL_INFO_IMOVEIS = 'http://localhost:3000/info_imovel_router';
+const API_URL_INFO_IMOVEIS = 'http://localhost:3000/cadastrar_imovel_router';
 
 async function carregarInfoImovelPorId() {
   try {
     const idImovel = sessionStorage.getItem('idimovel');
-    if(!idImovel || idImovel.length > 1){
+    const idImovelNum = Number(idImovel);
+    if (!idImovelNum) {
       throw new Error(`id do imovel não foi recebido corretamente`);
     }
     const response = await fetch(`${API_URL_INFO_IMOVEIS}`);
@@ -14,21 +15,57 @@ async function carregarInfoImovelPorId() {
 
     const imovel = await response.json();
 
-    const imovelClicado = imovel.filter(imov => imov.id === idImovel);
+    const imovelClicado = imovel.find(imov => Number(imov.id) === idImovelNum);
 
-    const container = document.getElementById("propriedadesExistentes");
-    if (!container) {
-      throw new Error('Elemento "propriedadesExistentes" não encontrado no DOM');
+    const divInfo = document.getElementById('infoImovel');
+    const divTabela = document.getElementById('divTabela');
+    const textEndereco = document.getElementById('textEndereco');
+    const descricao = document.getElementById('descricao');
+    const valorDiaria = document.getElementById('valorDiaria');
+    divTabela.innerHTML = '';
+    textEndereco.innerHTML = '';
+    descricao.innerHTML = '';
+    valorDiaria.innerHTML = '';
+    
+    if (!divInfo) {
+      throw new Error('Elemento de informação não encontrado no DOM');
     }
-    
-    container.innerHTML = ""; // Limpa o conteúdo anterior
-
-    // Verifica imagens 
-    const imagens = imovel.files_name ? imovel.files_name.split(';').filter(Boolean) : [];
-    const primeiraImagem = imagens.length > 0 ? imagens[0] : '';
-
-    
-
+    if (!imovelClicado) {
+      throw new Error('Imóvel não encontrado!');
+    }
+   valorDiaria.innerHTML = `
+    R$ ${imovelClicado.valorProprietario}
+   `;
+    textEndereco.innerHTML = `
+    ${imovelClicado.imovel_logradouro}, ${imovelClicado.imovel_bairro}, ${imovelClicado.imovel_numero}
+    `;
+    divTabela.innerHTML = `
+                <table id="tabela">
+                           <tr>
+                                 <td>Quartos
+                                        <td>
+                                        <td id="num_quarto">${imovelClicado.quartos}</td>
+                                   </tr>
+                                   <tr>
+                                        <td>Banheiros
+                                        <td>
+                                        <td id="num_banheiro">${imovelClicado.banheiros}</td>
+                                   </tr>
+                                   <tr>
+                                        <td>Camas
+                                        <td>
+                                        <td id="num_cama">${imovelClicado.camas}</td>
+                                   </tr>
+                                   <tr>
+                                        <td>Cômodos
+                                        <td>
+                                        <td id="num_comodo">${imovelClicado.comodos}</td>
+                                   </tr>
+                              </table>
+    `;
+    descricao.innerHTML = `
+    ${imovelClicado.descricao}
+    `;	
   } catch (error) {
     console.error('Erro ao carregar imóvel:', error);
     const container = document.getElementById("propriedadesExistentes");
@@ -46,21 +83,18 @@ async function carregarInfoImovelPorId() {
 
 
 
-function pegar_dados()
-{
-     let checkIn = document.getElementById("data").value;
-     let checkOut = document.getElementById("data1").value;
-     let numeroHospedes = document.getElementById("selecionarNum").value;
+function pegar_dados() {
+  let checkIn = document.getElementById("data").value;
+  let checkOut = document.getElementById("data1").value;
+  let numeroHospedes = document.getElementById("selecionarNum").value;
 
-     if (checkIn === '' || checkOut === '' || numeroHospedes === '' )
-     {
-          alert('Preencha todos os campos corretamente!');
+  if (checkIn === '' || checkOut === '' || numeroHospedes === '') {
+    alert('Preencha todos os campos corretamente!');
     return;
-     }
-     else
-     {
-          enviarDados(checkIn, checkOut, numeroHospedes);
-     }
+  }
+  else {
+    enviarDados(checkIn, checkOut, numeroHospedes);
+  }
 }
 
 
@@ -107,3 +141,4 @@ function carregarDados() {
     .catch(error => console.error('Erro ao carregar os dados:', error));
 }
 */
+window.onload = carregarInfoImovelPorId;
