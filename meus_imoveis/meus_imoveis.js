@@ -56,4 +56,3 @@ async function carregarProdutosNovos() {
 }
 
 // Chama a função ao carregar a página
-win
