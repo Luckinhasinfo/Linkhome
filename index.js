@@ -1,24 +1,38 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const app = express();
 const session = require('express-session');
+
+const app = express();
+
+// Sessão deve vir primeiro
 app.use(session({
     secret: 'seuSegredo',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: {
+        secure: false, // só true com HTTPS
+        httpOnly: false,
+        sameSite: 'none' // ou 'none' se usar domínios diferentes
+    }
 }));
 
+
+// CORS depois da sessão
 app.use(cors({
-    origin: ['http://localhost:3000', 'http://127.0.0.1:5500'], // ou o endereço do seu frontend
+    origin: ['http://localhost:3000', 'http://localhost:3000', 'http://127.0.0.1:3000', 'http://127.0.0.1:5500'], // seu frontend
     credentials: true
 }));
-app.use(express.json());
 
+// Outros middlewares
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Rotas
 const usuariosRouter = require('./routers/usuarios');
 app.use('/usuarios', usuariosRouter);
 
-const loginInicialRouter =require('./routers/login_inicial_router');
+const loginInicialRouter = require('./routers/login_inicial_router');
 app.use('/login_inicial_router', loginInicialRouter);
 
 const cadastroImovelRouter = require('./routers/cadastrar_imovel_router');
@@ -27,14 +41,20 @@ app.use('/cadastrar_imovel_router', cadastroImovelRouter);
 const infoImovelRouter = require('./routers/info_imovel_router');
 app.use('/info_imovel_router', infoImovelRouter);
 
+// Servir arquivos estáticos
 app.use(express.static(path.join(__dirname, '..')));
 
-const PORT = 3000;
+// Teste de sessão
+app.get('/teste-sessao', (req, res) => {
+    res.json({ cpf: req.session.cpf });
+});
 
+// Inicialização
+const PORT = 3000;
 app.get('/', (req, res) => {
-     res.send('Servidor funcionando com sucesso!');
+    res.send('Servidor funcionando com sucesso!');
 });
 
 app.listen(PORT, () => {
-     console.log(`Servidor rodando na porta ${PORT}`);
+    console.log(`Servidor rodando na porta ${PORT}`);
 });

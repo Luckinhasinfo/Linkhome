@@ -109,10 +109,11 @@
     margin-top: 60px;
 }
 .propriedadeIcone{
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     border: 1px solid black;
-    background-color: rgb(255, 255, 255) ;
+    background-color: rgb(226, 226, 226) ;
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
@@ -135,16 +136,23 @@
 }
 .endereco{
     margin-top: 30px;
-    width: 100%;
+    width: 85%;
+    margin-left: 7%;
+    text-align: left;
+    font-weight: 700;
+}
+.numCom{
+    width: 85%;
+    margin-left: 7%;
     text-align: left;
     font-weight: 400;
 }
-
 .preco{
     margin-top: 30px;
-    width: 100%;
+    width: 85%;
+    margin-right: 7%;
     text-align: right;
-    font-weight: 400;
+    font-weight: 700;
 }
 
 #botaoAddNovoImovel{

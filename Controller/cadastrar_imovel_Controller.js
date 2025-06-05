@@ -4,7 +4,8 @@ const session = require('express-session');
 // Cadastrar novo imóvel
 exports.cadastrar = (req, res) => {
     const cpf = req.session.cpf; // <-- Aqui você pega o CPF da sessão
-    console.log(cpf);
+    console.log('Cpf:'+ cpf);
+    console.log('a');
     const {
         imovel_cep,
         imovel_bairro,
@@ -21,7 +22,6 @@ exports.cadastrar = (req, res) => {
     } = req.body;
 
     if (
-        !cpf || // <--- Adicione esta linha!
         !imovel_cep || !imovel_bairro || !imovel_numero || !imovel_logradouro ||
         !descricao || !files_name ||
         comodos === undefined || camas === undefined || banheiros === undefined ||

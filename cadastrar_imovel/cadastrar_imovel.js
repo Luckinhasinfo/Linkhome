@@ -20,7 +20,7 @@ function pegar_dados() {
      const quartos = parseInt(document.getElementById('selectQuartos').value);
      const valorProprietario = parseFloat(document.querySelector('#idValorProprietario input').value);
      const situacao_aluguel = 0;
-     console.log('descricao');
+
      // Validação simples
      if (
           imovel_cep === '' ||
@@ -35,7 +35,7 @@ function pegar_dados() {
           isNaN(valorProprietario)
      ) {
           alert('Preencha todos os campos obrigatórios!');
-          return;
+
      }
      else {
           enviarDados(imovel_cep, imovel_bairro, imovel_numero, imovel_logradouro, descricao, files_name, comodos, camas, banheiros, quartos, valorProprietario, situacao_aluguel, files);

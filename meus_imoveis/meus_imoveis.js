@@ -23,16 +23,17 @@ async function carregarProdutosNovos() {
       colDiv.className = 'propriedadeIcone';
 
       colDiv.innerHTML = `
-        <div class="divfotoPropriedade">
-          <img class="propriedadeImg"
-               src="${imovel.files_name}"
-               alt="">
-        </div>
-        <div class="infoPropriedade">
-          <h5 class="localizacão">${imovel.imovel_bairro ?? ''}, ${imovel.imovel_logradouro ?? ''}</h5>
-          <h5 class="preco">R$: ${imovel.valorProprietario ?? '-'} /dia</h5>
-        </div>
-        <button type="button" class="btn btn-danger position-absolute bottom-0 end-0">&#10060;</button>
+        <div class="propriedadeIcone">
+               <div class="fotoPropriedade">
+                 <img scr="${imoveis.files_name[0]}>
+               </div>
+               <div class="infoImoveis">
+                    <div class="endereco"></div>
+                    <div class="preco">R$ 130,00</div>
+                    <div class="numCom">6 Cômodos</div>
+               </div>
+          </div>
+
       `;
 
       container.appendChild(colDiv);

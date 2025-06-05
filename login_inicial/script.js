@@ -12,6 +12,7 @@ async function enviarDados(floatingEmail, floatingSenha) {
     try {
         const resposta = await fetch('http://localhost:3000/login_inicial_router/login', {
             method: 'POST',
+            credentials: 'include',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 email: floatingEmail,
@@ -23,7 +24,7 @@ async function enviarDados(floatingEmail, floatingSenha) {
 
         if (resposta.ok) {
             alert('Login realizado com sucesso!');
-            window.location.href = "../reservar_imovel/reservar_imovel.html";
+          window.location.href = "../reservar_imovel/reservar_imovel.html";
         } else {
             alert('Erro: ' + resultado.erro);
         }
