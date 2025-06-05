@@ -124,7 +124,8 @@ function pegar_dados() {
   let numeroHospedes = document.getElementById("selecionarNum").value;
   const idImovel = sessionStorage.getItem('idimovel');
   const idImovelNum = Number(idImovel);
-  const idUsuario = localStorage.getItem('cpfUsuario');
+  const idUsuario = sessionStorage.getItem('cpfUsuario');
+
 
   if (checkIn === '' || checkOut === '' || numeroHospedes === '' || idImovelNum === null || idImovelNum === ''|| idUsuario === null || idUsuario === '') {
     alert('Preencha todos os campos corretamente!');

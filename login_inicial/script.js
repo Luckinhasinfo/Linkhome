@@ -25,9 +25,9 @@ async function enviarDados(floatingEmail, floatingSenha) {
         const resultado = await resposta.json();
 
         if (resposta.ok && resultado.usuario) {
-            localStorage.clear();
+            sessionStorage.clear();
             console.log('CPF do usuário logado:', resultado.usuario.cpf); // <-- Mostra o CPF no console
-            localStorage.setItem('cpfUsuario', resultado.usuario.cpf);
+            sessionStorage.setItem('cpfUsuario', resultado.usuario.cpf);
             alert('Login realizado com sucesso!');
             window.location.href = "../reservar_imovel/reservar_imovel.html";
         } else {

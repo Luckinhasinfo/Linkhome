@@ -5,7 +5,6 @@ exports.cadastrar = (req, res) => {
 
     const {
         cpf_proprietario,
-        numero_proprietario,
         imovel_cep,
         imovel_bairro,
         imovel_numero,
@@ -21,7 +20,7 @@ exports.cadastrar = (req, res) => {
     } = req.body;
 
     if (
-        !cpf_proprietario || !numero_proprietario ||
+        !cpf_proprietario ||
         !imovel_cep || !imovel_bairro || !imovel_numero || !imovel_logradouro ||
         !descricao || !files_name ||
         comodos === undefined || camas === undefined || banheiros === undefined ||
@@ -32,15 +31,14 @@ exports.cadastrar = (req, res) => {
 
     const sql = `
         INSERT INTO cadastrar_imovel (
-            cpf_proprietario, numero_proprietario, imovel_cep, imovel_bairro, imovel_numero, imovel_logradouro, descricao, files_name,
+            cpf_proprietario, imovel_cep, imovel_bairro, imovel_numero, imovel_logradouro, descricao, files_name,
             comodos, camas, banheiros, quartos, valorProprietario, situacao_aluguel
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
     db.query(
         sql,
         [
             cpf_proprietario,
-            numero_proprietario,
             imovel_cep,
             imovel_bairro,
             imovel_numero,
@@ -94,8 +92,6 @@ exports.buscarPorId = (req, res) => {
 exports.atualizar = (req, res) => {
     const id = req.params.id;
     const {
-      cpf_proprietario,
-            numero_proprietario,
         imovel_cep,
         imovel_bairro,
         imovel_numero,
@@ -112,7 +108,7 @@ exports.atualizar = (req, res) => {
 
     const sql = `
         UPDATE cadastrar_imovel SET
-            cpf_proprietario = ?, numero_proprietario = ?, imovel_cep = ?, imovel_bairro = ?, imovel_numero = ?, imovel_logradouro = ?, descricao = ?, files_name = ?,
+            imovel_cep = ?, imovel_bairro = ?, imovel_numero = ?, imovel_logradouro = ?, descricao = ?, files_name = ?,
             comodos = ?, camas = ?, banheiros = ?, quartos = ?, valorProprietario = ?, situacao_aluguel = ?
         WHERE id = ?
     `;
@@ -120,8 +116,6 @@ exports.atualizar = (req, res) => {
     db.query(
         sql,
         [
-           cpf_proprietario,
-            numero_proprietario,
             imovel_cep,
             imovel_bairro,
             imovel_numero,
