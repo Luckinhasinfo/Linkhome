@@ -31,12 +31,13 @@ router.put('/:id', controller.atualizar);
 // Excluir imóvel
 router.delete('/:id', controller.excluir);
 
-// ROTA PAA UPLOAD DA IMAGEM
 router.post('/upload', upload.array('fotos_imovel'), (req, res) => {
     if (!req.files || req.files.length === 0) {
         return res.status(400).json({ erro: 'Nenhuma imagem enviada.' });
     }
-    res.status(200).json({ mensagem: 'Imagens enviadas com sucesso!', files: req.files.map(f => f.filename) });
+    // Caminhos pro  s alvar no banco (path ai é caminhho)
+    const caminhos = req.files.map(f => path.join('imagens_imoveis', f.filename));
+    res.status(200).json({ mensagem: 'Imagens enviadas com sucesso!', files: caminhos });
 });
 module.exports = router;
 

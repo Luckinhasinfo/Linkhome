@@ -1,3 +1,51 @@
+const API_URL_INFO_IMOVEIS = 'http://localhost:3000/info_imovel_router';
+
+async function carregarInfoImovelPorId() {
+  try {
+    const idImovel = sessionStorage.getItem('idimovel');
+    if(!idImovel || idImovel.length > 1){
+      throw new Error(`id do imovel não foi recebido corretamente`);
+    }
+    const response = await fetch(`${API_URL_INFO_IMOVEIS}`);
+
+    if (!response.ok) {
+      throw new Error(`Erro na requisição: ${response.status}`);
+    }
+
+    const imovel = await response.json();
+
+    const imovelClicado = imovel.filter(imov => imov.id === idImovel);
+
+    const container = document.getElementById("propriedadesExistentes");
+    if (!container) {
+      throw new Error('Elemento "propriedadesExistentes" não encontrado no DOM');
+    }
+    
+    container.innerHTML = ""; // Limpa o conteúdo anterior
+
+    // Verifica imagens 
+    const imagens = imovel.files_name ? imovel.files_name.split(';').filter(Boolean) : [];
+    const primeiraImagem = imagens.length > 0 ? imagens[0] : '';
+
+    
+
+  } catch (error) {
+    console.error('Erro ao carregar imóvel:', error);
+    const container = document.getElementById("propriedadesExistentes");
+    if (container) {
+      container.innerHTML = `
+        <div class="alert alert-danger">
+          Erro ao carregar imóvel: ${error.message}
+        </div>
+      `;
+    }
+  }
+}
+
+
+
+
+
 function pegar_dados()
 {
      let checkIn = document.getElementById("data").value;
@@ -45,7 +93,7 @@ async function enviarDados(checkIn, checkOut, numeroHospedes) {
 let botao = document.getElementById('botaoReservar');
 botao.addEventListener('click', pegar_dados);
 
-function carregarDados(){}
+
 /*
 function carregarDados() {
   fetch('http://localhost:3000/info_imovel_router')

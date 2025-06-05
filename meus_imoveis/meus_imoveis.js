@@ -23,23 +23,24 @@ async function carregarProdutosNovos() {
     imoveis.forEach(imovel => {
       // Verifica imagens 
       const imagens = imovel.files_name ? imovel.files_name.split(';').filter(Boolean) : [];
-      const primeiraImagem = imagens.length > 0 ? imagens[0] : 'caminho/para/imagem/padrao.jpg';
+      const primeiraImagem = imagens.length > 0 ? imagens[0] : console.log('nao achou');
 
       const colDiv = document.createElement('div');
       colDiv.className = 'propriedadeIcone';
 
       colDiv.innerHTML = `
-        <div class="fotoPropriedade">
-          <img src="${primeiraImagem}" alt="Imagem do imóvel">
+        <div class="fotoPropriedade" id="${imovel.id}">
+          <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg">
         </div>
         <div class="infoImoveis">
           <div class="endereco">${imovel.imovel_logradouro || 'Endereço não disponível'}, ${imovel.imovel_bairro || ''}</div>
-          <div class="preco">R$ ${imovel.valorProprietario ? Number(imovel.valorProprietario).toLocaleString('pt-BR') : '0,00'}</div>
+          <div class="preco">R$ ${imovel.valorProprietario ? Number(imovel.valorProprietario) : '0,00'}</div>
           <div class="numCom">${imovel.comodos || 0} cômodos</div>
         </div>
       `;
-
       container.appendChild(colDiv);
+      let divPropr = document.getElementsByClassName('divPropriedade')[0];
+      divPropr.addEventListener('click', abrirInfoImovel(imovel.id));
     });
 
   } catch (error) {
@@ -55,4 +56,41 @@ async function carregarProdutosNovos() {
   }
 }
 
+function abrirInfoImovel(idImovel){
+   sessionStorage.clear();
+   sessionStorage.setItem("idimovel", idImovel);
+   window.location.href = "..info_imovel/info_imovel.html";
+}
+
+async function deletarImovel(id) {
+  if (!confirm('Tem certeza que deseja excluir este imóvel?')) return;
+  try {
+    const resposta = await fetch(`http://localhost:3000/cadastrar_imovel_router/${id}`, {
+      method: 'DELETE'
+    });
+    const resultado = await resposta.json();
+    if (resposta.ok) {
+      alert('Imóvel excluído com sucesso!');
+      carregarProdutosNovos(); // Atualiza a lista
+    } else {
+      alert('Erro ao excluir: ' + (resultado.erro || resultado.mensagem));
+    }
+  } catch (error) {
+    alert('Erro inesperado: ' + error.message);
+  }
+}
+
+window.deletarImovel = deletarImovel; // Torna a função global para uso no onclick
+
+
+
+
+
+
+
+
+
+
+
 // Chama a função ao carregar a página
+window.onload = carregarProdutosNovos;

@@ -166,21 +166,12 @@
     height: 100%;
     width: 100%;
 }
-.infoPropriedade{
-     padding-left: 4%;   
-     padding-right: 4%;
-    display: grid;
-    gap:5%;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 3%;
-}
-
-.preco{
-     top:30%;
-}
-#imagem_fundo
-{
-     z-index: 0;
-     width: 100%;
-     height: 100%;
+.botaoDeletar2{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: #ff0000;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
 }

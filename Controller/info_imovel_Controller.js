@@ -11,7 +11,7 @@ exports.listar = (req, res) => {
 // Busca uma reserva por ID
 exports.buscarPorId = (req, res) => {
     const id = req.params.id;
-    db.query('SELECT * FROM imovel_reserva WHERE id = ?', [id], (erro, resultado) => {
+    db.query('SELECT * FROM info_imovel WHERE id = ?', [id], (erro, resultado) => {
         if (erro) return res.status(500).json({ erro: 'Erro ao buscar reserva.' });
         if (resultado.length === 0) return res.status(404).json({ mensagem: 'Reserva não encontrada.' });
         res.status(200).json(resultado[0]);

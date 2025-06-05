@@ -1,3 +1,4 @@
+-- SQLBook: Code
 CREATE TABLE cadastrar_imovel (
      id INT AUTO_INCREMENT PRIMARY KEY,
     cpf_proprietario VARCHAR(11) NOT NULL,
