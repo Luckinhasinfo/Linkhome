@@ -28,16 +28,15 @@ async function carregarProdutosNovos() {
       const colDiv = document.createElement('div');
       colDiv.className = 'propriedadeIcone';
       colDiv.id = imovel.id;
-      colDiv.onclick = () => abrirInfoImovel(colDiv.id);
       colDiv.innerHTML = `
         <div class="fotoPropriedade" >
-          <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg">
+          <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg" onclick='abrirInfoImovel${colDiv.id}'>
         </div>
         <div class="infoImoveis">
           <div class="endereco">${imovel.imovel_logradouro || 'Endereço não disponível'}, ${imovel.imovel_bairro || ''}</div>
           <div class="preco">R$ ${imovel.valorProprietario ? Number(imovel.valorProprietario) : '0,00'}</div>
           <div class="numCom">${imovel.comodos || 0} cômodos</div>
-          <div class='divBTNS'><button class="botaoEditar" onclick='editar_pag(${colDiv.id})'></button><button class="botaoDeletar" onclick='deletarImovel(${colDiv.id})></button></div>
+          <div class='divBTNS'><button class="botaoEditar" onclick='editar_pag(${colDiv.id})'></button><button class="botaoDeletar" onclick='deletarImovel(${colDiv.id})'></button></div>
           
         </div>
       `;
@@ -86,8 +85,8 @@ function editar_pag (idImovel)
 }
 function abrirInfoImovel(idImovel){
    sessionStorage.clear();
-   sessionStorage.setItem("idimovel", idImovel);
-   window.location.href = "../info_imovel/info_imovel.html";
+    sessionStorage.setItem("idimovel", idImovel);
+     window.location.href = "../info_imovel/info_imovel.html";
 }
 
 
