@@ -15,25 +15,60 @@ async function carregarInfoImovelPorId() {
 
     const imovel = await response.json();
 
-    const imovelClicado = imovel.find(imov => Number(imov.id) === idImovelNum);
-
+       const imovelClicado = imovel.find(imov => Number(imov.id) === idImovelNum);
+    const imagens = imovelClicado.files_name ? imovelClicado.files_name.split(';').filter(Boolean) : [];
+    const tamanhoImagens = imagens.length;
+    console.log(imagens, tamanhoImagens);
     const divInfo = document.getElementById('infoImovel');
     const divTabela = document.getElementById('divTabela');
     const textEndereco = document.getElementById('textEndereco');
     const descricao = document.getElementById('descricao');
     const valorDiaria = document.getElementById('valorDiaria');
+    const divCarrocel = document.getElementById('carousel-innerh');
+    divCarrocel.innerHTML = '';
     divTabela.innerHTML = '';
     textEndereco.innerHTML = '';
     descricao.innerHTML = '';
     valorDiaria.innerHTML = '';
-    
+
     if (!divInfo) {
       throw new Error('Elemento de informação não encontrado no DOM');
     }
     if (!imovelClicado) {
       throw new Error('Imóvel não encontrado!');
     }
-   valorDiaria.innerHTML = `
+
+    // CORREÇÃO DO CARROSSEL
+    if (tamanhoImagens > 0) {
+      // Cria a div carousel-inner
+      const carouselInner = document.createElement('div');
+      carouselInner.className = 'carousel-inner';
+
+      imagens.forEach((img, i) => {
+        const item = document.createElement('div');
+        item.className = 'carousel-item' + (i === 0 ? ' active' : '');
+        item.innerHTML = `<img src="../${img}" class="d-block w-100" alt="Imagem do Imovel">`;
+        carouselInner.appendChild(item);
+      });
+
+      divCarrocel.appendChild(carouselInner);
+
+      // Adiciona botões de navegação se houver mais de uma imagem
+      if (tamanhoImagens > 1) {
+        divCarrocel.innerHTML += `
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        `;
+      }
+    }
+
+    valorDiaria.innerHTML = `
     R$ ${imovelClicado.valorProprietario}
    `;
     textEndereco.innerHTML = `
@@ -65,7 +100,7 @@ async function carregarInfoImovelPorId() {
     `;
     descricao.innerHTML = `
     ${imovelClicado.descricao}
-    `;	
+    `;
   } catch (error) {
     console.error('Erro ao carregar imóvel:', error);
     const container = document.getElementById("propriedadesExistentes");
@@ -87,27 +122,31 @@ function pegar_dados() {
   let checkIn = document.getElementById("data").value;
   let checkOut = document.getElementById("data1").value;
   let numeroHospedes = document.getElementById("selecionarNum").value;
+  const idImovel = sessionStorage.getItem('idimovel');
+  const idImovelNum = Number(idImovel);
+  const idUsuario = localStorage.getItem('cpfUsuario');
 
-  if (checkIn === '' || checkOut === '' || numeroHospedes === '') {
+  if (checkIn === '' || checkOut === '' || numeroHospedes === '' || idImovelNum === null || idImovelNum === ''|| idUsuario === null || idUsuario === '') {
     alert('Preencha todos os campos corretamente!');
     return;
-  }
+}
   else {
-    enviarDados(checkIn, checkOut, numeroHospedes);
+    enviarDados(idUsuario,idImovelNum,checkIn, checkOut, numeroHospedes);
   }
 }
 
 
-
-async function enviarDados(checkIn, checkOut, numeroHospedes) {
+async function enviarDados(idUsuario, idImovel, checkIn, checkOut, numeroHospedes) {
   try {
     const resposta = await fetch('http://localhost:3000/info_imovel_router', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        checkIn: checkIn,
-        checkOut: checkOut,
-        numeroHospedes: numeroHospedes
+        id_usuario: idUsuario,
+        id_imovel: idImovel,
+        data_check_in: checkIn,
+        data_check_out: checkOut,
+        num_hospedes: numeroHospedes
       })
     });
 
@@ -123,6 +162,9 @@ async function enviarDados(checkIn, checkOut, numeroHospedes) {
     alert('Erro inesperado: ' + error.message);
   }
 }
+let checkIn = document.getElementById("data");
+let checkOut = document.getElementById("data1");
+console.log(checkIn, checkOut);
 
 let botao = document.getElementById('botaoReservar');
 botao.addEventListener('click', pegar_dados);
