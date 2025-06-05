@@ -44,10 +44,6 @@ app.use('/info_imovel_router', infoImovelRouter);
 // Servir arquivos estáticos
 app.use(express.static(path.join(__dirname, '..')));
 
-// Teste de sessão
-app.get('/teste-sessao', (req, res) => {
-    res.json({ cpf: req.session.cpf });
-});
 
 // Inicialização
 const PORT = 3000;

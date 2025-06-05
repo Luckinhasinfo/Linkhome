@@ -20,11 +20,23 @@ body{
     font-size: 35px;
     font-weight: 400;
 }
-#endereco, #dados, #textImagem, #textDesc{
+#endereco, #dados, #textImagem, #textDesc, #proprietario{
     margin-top: 40px;
     font-size: 20px;
     width: 100%;
     text-align: center;
+}
+#divProprietario{
+    margin-top: 5px;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding-bottom: 40px;
+    background-color: rgba(0,0,0, 0.1);
 }
 #formImovel{
     margin-top: 5px;

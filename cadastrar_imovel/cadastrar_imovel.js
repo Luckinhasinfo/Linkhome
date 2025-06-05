@@ -1,6 +1,8 @@
 function pegar_dados() {
 
      // Dados principais
+     let cpf_proprietario = document.getElementById('cpf_proprietario').value;
+     let numero_proprietario = document.getElementById('numero_proprietario').value;
      let imovel_cep = document.getElementById('imovel_cep').value;
      let imovel_bairro = document.getElementById('imovel_bairro').value;
      let imovel_numero = document.getElementById('imovel_numero').value;
@@ -23,6 +25,8 @@ function pegar_dados() {
 
      // Validação simples
      if (
+          cpf_proprietario === '' ||
+          numero_proprietario === '' ||
           imovel_cep === '' ||
           imovel_bairro === '' ||
           imovel_numero === '' ||//deixa em coluna mesmo malditos (fica mais facil de ver)
@@ -32,23 +36,25 @@ function pegar_dados() {
           isNaN(camas) ||
           isNaN(banheiros) ||
           isNaN(quartos) ||
-          isNaN(valorProprietario)
+          isNaN(valorProprietario) 
      ) {
           alert('Preencha todos os campos obrigatórios!');
 
      }
      else {
-          enviarDados(imovel_cep, imovel_bairro, imovel_numero, imovel_logradouro, descricao, files_name, comodos, camas, banheiros, quartos, valorProprietario, situacao_aluguel, files);
+          enviarDados(cpf_proprietario,imovel_cep, imovel_bairro, imovel_numero, imovel_logradouro, descricao, files_name, comodos, camas, banheiros, cpf_proprietario, quartos, valorProprietario, situacao_aluguel, files, numero_proprietario);
      }
 }
 
-async function enviarDados(imovel_cep, imovel_bairro, imovel_numero, imovel_logradouro, descricao, files_name, comodos, camas, banheiros, quartos, valorProprietario, situacao_aluguel, files) {
+async function enviarDados(cpf_proprietario,imovel_cep, imovel_bairro, imovel_numero, imovel_logradouro, descricao, files_name, comodos, camas, banheiros, cpf_proprietario, quartos, valorProprietario, situacao_aluguel, files, numero_proprietario) {
      try {
           const resposta = await fetch('http://localhost:3000/cadastrar_imovel_router', {
                method: 'POST',
                credentials: 'include', // <-- Adicione esta linha!
                headers: { 'Content-Type': 'application/json' },
                body: JSON.stringify({
+                    cpf_proprietario: cpf_proprietario,
+                    numero_proprietario: numero_proprietario,
                     imovel_cep: imovel_cep,
                     imovel_bairro: imovel_bairro,
                     imovel_numero: imovel_numero,
@@ -59,7 +65,7 @@ async function enviarDados(imovel_cep, imovel_bairro, imovel_numero, imovel_logr
                     camas: camas,
                     banheiros: banheiros,
                     quartos: quartos,
-                    valorProprietario: valorProprietario,
+                    valorProprietario: valorProprietario,   
                     situacao_aluguel: situacao_aluguel
                })
           });

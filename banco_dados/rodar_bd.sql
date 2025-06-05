@@ -1,17 +1,7 @@
--- SQLBook: Code
-CREATE TABLE usuarios (
-     cpf VARCHAR(20) NOT NULL PRIMARY KEY,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    senha VARCHAR(255) NOT NULL,
-    telefone VARCHAR(20) NOT NULL,
-    data_nascimento DATE NOT NULL,
-    logado BOOLEAN NOT NULL DEFAULT FALSE
-);
-
 CREATE TABLE cadastrar_imovel (
      id INT AUTO_INCREMENT PRIMARY KEY,
     cpf_proprietario VARCHAR(11) NOT NULL,
-    numero_proprietario VARCHAR(16) NOT NULL,
+    telefone_proprietario VARCHAR(16) NOT NULL,
     imovel_cep VARCHAR(20) NOT NULL,
     imovel_bairro VARCHAR(100) NOT NULL,
     imovel_numero INT NOT NULL,

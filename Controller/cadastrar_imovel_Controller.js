@@ -1,12 +1,9 @@
 const db = require('../banco_dados/bd_config');
-const session = require('express-session');
-
 // Cadastrar novo imóvel
 exports.cadastrar = (req, res) => {
-    const cpf = req.session.cpf; // <-- Aqui você pega o CPF da sessão
-    console.log('Cpf:'+ cpf);
-    console.log('a');
     const {
+        cpf_proprietario,
+        numero_proprietario,
         imovel_cep,
         imovel_bairro,
         imovel_numero,
@@ -22,6 +19,7 @@ exports.cadastrar = (req, res) => {
     } = req.body;
 
     if (
+        !cpf_proprietario || !numero_proprietario ||
         !imovel_cep || !imovel_bairro || !imovel_numero || !imovel_logradouro ||
         !descricao || !files_name ||
         comodos === undefined || camas === undefined || banheiros === undefined ||
@@ -32,14 +30,15 @@ exports.cadastrar = (req, res) => {
 
     const sql = `
         INSERT INTO cadastrar_imovel (
-            cpf, imovel_cep, imovel_bairro, imovel_numero, imovel_logradouro, descricao, files_name,
+            cpf_proprietario, numero_proprietario, imovel_cep, imovel_bairro, imovel_numero, imovel_logradouro, descricao, files_name,
             comodos, camas, banheiros, quartos, valorProprietario, situacao_aluguel
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
     db.query(
         sql,
         [
-            cpf, // <-- Aqui você insere o CPF do proprietário
+            cpf_proprietario,
+            numero_proprietario,
             imovel_cep,
             imovel_bairro,
             imovel_numero,

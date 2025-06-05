@@ -9,31 +9,34 @@ async function carregarProdutosNovos() {
     }
 
     const imoveis = await response.json();
-    
+
     if (!Array.isArray(imoveis)) {
       throw new Error('Dados recebidos não são um array de imoveis');
     }
-
-    // Seleciona o container onde os imóveis serão exibidos
     const container = document.getElementById("propriedadesExistentes");
+    if (!container) {
+      throw new Error('Elemento "propriedadesExistentes" não encontrado no DOM');
+    }
+    
     container.innerHTML = ""; // Limpa o conteúdo anterior
 
     imoveis.forEach(imovel => {
+      // Verifica imagens 
+      const imagens = imovel.files_name ? imovel.files_name.split(';').filter(Boolean) : [];
+      const primeiraImagem = imagens.length > 0 ? imagens[0] : 'caminho/para/imagem/padrao.jpg';
+
       const colDiv = document.createElement('div');
       colDiv.className = 'propriedadeIcone';
 
       colDiv.innerHTML = `
-        <div class="propriedadeIcone">
-               <div class="fotoPropriedade">
-                 <img scr="${imoveis.files_name[0]}>
-               </div>
-               <div class="infoImoveis">
-                    <div class="endereco"></div>
-                    <div class="preco">R$ 130,00</div>
-                    <div class="numCom">6 Cômodos</div>
-               </div>
-          </div>
-
+        <div class="fotoPropriedade">
+          <img src="${primeiraImagem}" alt="Imagem do imóvel">
+        </div>
+        <div class="infoImoveis">
+          <div class="endereco">${imovel.imovel_logradouro || 'Endereço não disponível'}, ${imovel.imovel_bairro || ''}</div>
+          <div class="preco">R$ ${imovel.valorProprietario ? Number(imovel.valorProprietario).toLocaleString('pt-BR') : '0,00'}</div>
+          <div class="numCom">${imovel.comodos || 0} cômodos</div>
+        </div>
       `;
 
       container.appendChild(colDiv);
@@ -45,14 +48,12 @@ async function carregarProdutosNovos() {
     if (container) {
       container.innerHTML = `
         <div class="alert alert-danger">
-          Erro ao carregar produtos: ${error.message}
+          Erro ao carregar imóveis: ${error.message}
         </div>
       `;
-    } else {
-      console.error('Elemento propriedadesExistentes não encontrado no DOM.');
     }
   }
 }
 
 // Chama a função ao carregar a página
-window.onload = carregarProdutosNovos;
+win
