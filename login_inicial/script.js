@@ -29,7 +29,7 @@ async function enviarDados(floatingEmail, floatingSenha) {
             console.log('CPF do usuário logado:', resultado.usuario.cpf); // <-- Mostra o CPF no console
             localStorage.setItem('cpfUsuario', resultado.usuario.cpf);
             alert('Login realizado com sucesso!');
-            window.location.href = "../meus_imoveis/meus_imovel.html";
+            window.location.href = "../reservar_imovel/reservar_imovel.html";
         } else {
             alert('Erro: ' + (resultado.erro || resultado.mensagem));
         }
