@@ -81,7 +81,7 @@ window.deletarImovel = deletarImovel; // Torna a função global para uso no onc
 function abrirInfoImovel(idImovel){
    sessionStorage.clear();
    sessionStorage.setItem("idimovel", idImovel);
-   window.location.href = "../info_imovel/info_imovel.html";
+   window.location.href = "../editar_imovel/editar.html";
 }
 
 
