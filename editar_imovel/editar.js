@@ -1,3 +1,4 @@
+
 async function pegar_dados() {
     // Dados principais
     let cpf_proprietario = document.getElementById('cpf_proprietario').value;
@@ -58,7 +59,8 @@ async function pegar_dados() {
         alert('Erro ao enviar imagem: ' + error.message);
         return;
     }
-
+    let id_imovel = sessionStorage.getItem('idimovel');
+    console.log(`tste id: ${id_imovel}`)
     // 2. Envie os dados do imóvel com o caminho da(s) imagem(ns)
     await enviarDados(
         cpf_proprietario,
@@ -74,17 +76,20 @@ async function pegar_dados() {
         quartos,
         valorProprietario,
         situacao_aluguel,
-        numero_proprietario
+        numero_proprietario,
+        id_imovel
     );
 }
 
 async function enviarDados(
     cpf_proprietario, imovel_cep, imovel_bairro, imovel_numero, imovel_logradouro, descricao,
-    files_name, comodos, camas, banheiros, quartos, valorProprietario, situacao_aluguel, numero_proprietario
+    files_name, comodos, camas, banheiros, quartos, valorProprietario, situacao_aluguel, numero_proprietario,
+    id_imovel
 ) {
     try {
-        const resposta = await fetch('http://localhost:3000/cadastrar_imovel_router', {
-            method: 'POST',
+     console.log(`id: ${id_imovel}`)
+        const resposta = await fetch(`http://localhost:3000/cadastrar_imovel_router/${id_imovel}`, {
+            method: 'PUT',
             credentials: 'include',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -112,7 +117,7 @@ async function enviarDados(
             return;
         }
 
-        alert('Imóvel cadastrado com sucesso!');
+        alert('Imóvel atualizado com sucesso!');
         window.location.href = "../meus_imoveis/meus_imoveis.html";
     } catch (error) {
         alert('Erro inesperado: ' + error.message);

@@ -94,6 +94,8 @@ exports.buscarPorId = (req, res) => {
 exports.atualizar = (req, res) => {
     const id = req.params.id;
     const {
+      cpf_proprietario,
+            numero_proprietario,
         imovel_cep,
         imovel_bairro,
         imovel_numero,
@@ -110,7 +112,7 @@ exports.atualizar = (req, res) => {
 
     const sql = `
         UPDATE cadastrar_imovel SET
-            imovel_cep = ?, imovel_bairro = ?, imovel_numero = ?, imovel_logradouro = ?, descricao = ?, files_name = ?,
+            cpf_proprietario = ?, numero_proprietario = ?, imovel_cep = ?, imovel_bairro = ?, imovel_numero = ?, imovel_logradouro = ?, descricao = ?, files_name = ?,
             comodos = ?, camas = ?, banheiros = ?, quartos = ?, valorProprietario = ?, situacao_aluguel = ?
         WHERE id = ?
     `;
@@ -118,6 +120,8 @@ exports.atualizar = (req, res) => {
     db.query(
         sql,
         [
+           cpf_proprietario,
+            numero_proprietario,
             imovel_cep,
             imovel_bairro,
             imovel_numero,
