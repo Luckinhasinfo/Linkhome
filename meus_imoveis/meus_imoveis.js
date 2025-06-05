@@ -37,8 +37,8 @@ async function carregarProdutosNovos() {
           <div class="endereco">${imovel.imovel_logradouro || 'Endereço não disponível'}, ${imovel.imovel_bairro || ''}</div>
           <div class="preco">R$ ${imovel.valorProprietario ? Number(imovel.valorProprietario) : '0,00'}</div>
           <div class="numCom">${imovel.comodos || 0} cômodos</div>
-          <div class='divEditar'><div class="botaoEditar"></div></div>
-          <div class='divExcluir'><div class="botaoDeletar"></div></div>
+          <div class='divBTNS'><button class="botaoEditar" onclick='editar_pag(${colDiv.id})'></button><button class="botaoDeletar" onclick='deletarImovel(${colDiv.id})></button></div>
+          
         </div>
       `;
       container.appendChild(colDiv);
@@ -78,10 +78,16 @@ async function deletarImovel(id) {
 
 window.deletarImovel = deletarImovel; // Torna a função global para uso no onclick
 
+function editar_pag (idImovel)
+{
+     sessionStorage.clear();
+     sessionStorage.setItem("idimovel", idImovel);
+     window.location.href = "../editar_imovel/editar.html";
+}
 function abrirInfoImovel(idImovel){
    sessionStorage.clear();
    sessionStorage.setItem("idimovel", idImovel);
-   window.location.href = "../editar_imovel/editar.html";
+   window.location.href = "../info_imovel/info_imovel.html";
 }
 
 
