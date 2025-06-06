@@ -44,7 +44,6 @@ async function carregarProdutosNovos() {
      const colDiv = document.createElement('div');
        colDiv.className = 'propriedadeIcon';
        colDiv.id = imovel.id;
-       colDiv.onclick = () => abrirInfoImovel(colDiv.id);
        if (imovel.situacao_aluguel == 0) {
             
       colDiv.innerHTML = `
