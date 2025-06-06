@@ -49,7 +49,7 @@ async function carregarProdutosNovos() {
       colDiv.innerHTML = `
                <div class="fotoPropriedade">
                     <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg"
-                         onclick='abrirInfoImovel()'>
+                         onclick='abrirInfoImovel(${colDiv.id})'>
                </div>
                <div class="infoImoveis">
                     <div class="endereco">${imovel.imovel_logradouro || 'Endereço não disponível'}, ${imovel.imovel_bairro || ''}</div>
