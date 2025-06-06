@@ -50,11 +50,20 @@ async function carregarProdutosNovos() {
         <div class="fotoPropriedade" >
           <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg" onclick='abrirInfoImovel${colDiv.id}'>
         </div>
-        <div class="${alugado_cor}">
+         <div id="expandir">
+                    <div id="botaoExxx"><button id="botExpandir"><span class="material-symbols-outlined" onclick='aparecerOpcoes()'>
+                              more_horiz
+                         </span></button></div>
+               <div class="expandirOpcoes">
+                    <div class="botExpandir" id="botExcluir"><button id="excluir" onclick='deletarImovel(${colDiv.id})'>Excluir</button></div>
+                    <div class="botExpandir" id="botEditar"><button id="editar" onclick='editar_pag(${colDiv.id})'>Editar</button></div>
+                </div>
+                </div>
+        <div class="infoImoveis">
           <div class="endereco">${imovel.imovel_logradouro || 'Endereço não disponível'}, ${imovel.imovel_bairro || ''}</div>
           <div class="preco">R$ ${imovel.valorProprietario ? Number(imovel.valorProprietario) : '0,00'}</div>
           <div class="numCom">${imovel.comodos || 0} cômodos</div>
-          <div class='divBTNS'><button class="botaoEditar" onclick='editar_pag(${colDiv.id})'></button><button class="botaoDeletar" onclick='deletarImovel(${colDiv.id})'></button></div>
+          
         </div>
       `;}
       container.appendChild(colDiv);
