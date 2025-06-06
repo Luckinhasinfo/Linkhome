@@ -33,10 +33,10 @@ async function pegar_dados() {
         return;
     }
 
-    // 1. Envie as imagens primeiro e pegue o(s) caminho(s) retornado(s)
+    //Envie as imagens primeiro e pegue o caminho retornado bando de retardado
     let files_name = '';
     try {
-        const formData = new FormData();
+        const formData = new FormData();//key/ igual obj key/coisinha po
         for (let i = 0; i < files.length; i++) {
             formData.append('fotos_imovel', files[i]);
         }
