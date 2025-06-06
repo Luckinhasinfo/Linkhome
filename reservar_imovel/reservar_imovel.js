@@ -46,7 +46,6 @@ async function carregarProdutosNovos() {
       colDiv.className = 'propriedadeIcone';
       colDiv.id = imovel.id;
       colDiv.onclick = () => abrirInfoImovel(colDiv.id);
-      alert(imovel.comodos)
       colDiv.innerHTML = `
         <div class="fotoPropriedade" >
           <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg">
@@ -74,7 +73,6 @@ async function carregarProdutosNovos() {
 }
 
 function abrirInfoImovel(idImovel){
-   sessionStorage.clear();
     sessionStorage.setItem("idimovel", idImovel);
      window.location.href = "../info_imovel/info_imovel.html";
 }

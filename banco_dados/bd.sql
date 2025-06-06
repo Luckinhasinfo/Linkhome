@@ -9,15 +9,14 @@ CREATE TABLE usuarios (
 );
 
 CREATE TABLE cadastrar_imovel (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    cpf_proprietario VARCHAR(20) NOT NULL,
-    numero_proprietario VARCHAR(20) NOT NULL,
+     id INT AUTO_INCREMENT PRIMARY KEY,
+    cpf_proprietario VARCHAR(11) NOT NULL,
     imovel_cep VARCHAR(20) NOT NULL,
     imovel_bairro VARCHAR(100) NOT NULL,
     imovel_numero INT NOT NULL,
     imovel_logradouro VARCHAR(130) NOT NULL,
     descricao VARCHAR(500) NOT NULL,
-    files_name TEXT,
+    files_name VARCHAR(255),
     comodos INT NOT NULL,
     camas INT NOT NULL,
     banheiros INT NOT NULL,

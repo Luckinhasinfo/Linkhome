@@ -6,6 +6,7 @@ async function pegar_dados() {
     let imovel_logradouro = document.getElementById('imovel_logradouro').value;
     let descricao = document.getElementById('floatingTextarea2').value;
     let files = document.getElementById('foto_imovel').files;
+    let cpf_proprietario = sessionStorage.getItem('cpfUsuario');
 
     // Detalhes do imóvel
     const comodos = parseInt(document.getElementById('selectComodos').value);
@@ -14,7 +15,6 @@ async function pegar_dados() {
     const quartos = parseInt(document.getElementById('selectQuartos').value);
     const valorProprietario = parseFloat(document.querySelector('#idValorProprietario input').value);
     const situacao_aluguel = 0;
-     const cpf_proprietario = sessionStorage.getItem('cpfUsuario');
     // Validação simples
     if (
         cpf_proprietario === '' ||
@@ -31,11 +31,6 @@ async function pegar_dados() {
     ) {
         alert('Preencha todos os campos obrigatórios!');
         return;
-    }else{
-        const cpfUsuario = sessionStorage.getItem('cpfUsuario');
-        if(!(cpfUsuario==cpf_proprietario)){
-            alert('CPF diferente do já cadastrado')
-        }
     }
 
     // 1. Envie as imagens primeiro e pegue o(s) caminho(s) retornado(s)
@@ -111,7 +106,6 @@ async function enviarDados(
             alert('Erro: ' + resultado.erro);
             return;
         }
-
         alert('Imóvel cadastrado com sucesso!');
         window.location.href = "../meus_imoveis/meus_imoveis.html";
     } catch (error) {

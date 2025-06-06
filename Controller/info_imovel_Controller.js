@@ -20,7 +20,7 @@ exports.buscarPorId = (req, res) => {
 
 // Cadastra uma nova reserva
 exports.cadastrar = (req, res) => {
-    const { id_usuario, id_imovel, num_hospedes, data_check_in, data_check_out } = req.body;
+    const { id_usuario, id_imovel, num_hospedes, data_check_in, data_check_out} = req.body;
 
     if (
         !id_usuario ||
@@ -45,7 +45,18 @@ exports.cadastrar = (req, res) => {
                 console.error('Erro ao cadastrar reserva:', erro);
                 return res.status(500).json({ erro: 'Erro ao cadastrar reserva.' });
             }
-            res.status(201).json({ mensagem: 'Reserva cadastrada com sucesso!', id: resultado.insertId });
+            // Atualiza situacao_aluguel para 1 no imóvel reservado
+            db.query(
+                'UPDATE cadastrar_imovel SET situacao_aluguel = 1 WHERE id = ?',
+                [id_imovel],
+                (erroUpdate) => {
+                    if (erroUpdate) {
+                        console.error('Erro ao atualizar situacao_aluguel:', erroUpdate);
+                        return res.status(500).json({ erro: 'Reserva cadastrada, mas erro ao atualizar situação do imóvel.' });
+                    }
+                    res.status(201).json({ mensagem: 'Reserva cadastrada com sucesso!', id: resultado.insertId });
+                }
+            );
         }
     );
 };
@@ -53,7 +64,7 @@ exports.cadastrar = (req, res) => {
 // Atualiza uma reserva
 exports.atualizar = (req, res) => {
     const id = req.params.id;
-    const { id_usuario, id_imovel, num_hospedes, data_check_in, data_check_out } = req.body;
+    const { id_usuario, id_imovel, num_hospedes, data_check_in, data_check_out} = req.body;
 
     if (
         !id_usuario ||

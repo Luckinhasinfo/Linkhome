@@ -29,20 +29,37 @@ async function carregarProdutosNovos() {
       const colDiv = document.createElement('div');
       colDiv.className = 'propriedadeIcone';
       colDiv.id = imovel.id;
-      colDiv.innerHTML = `
+      let alugado_cor = 'infoImoveis';
+     if (imovel.situacao_aluguel == 1)
+          {
+               alugado_cor = 'infoImoveisAlugado';
+                colDiv.innerHTML = `
         <div class="fotoPropriedade" >
           <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg" onclick='abrirInfoImovel${colDiv.id}'>
         </div>
-        <div class="infoImoveis">
+        <div class="${alugado_cor}">
+          <div class="endereco">${imovel.imovel_logradouro || 'Endereço não disponível'}, ${imovel.imovel_bairro || ''}</div>
+          <div class="preco">R$ ${imovel.valorProprietario ? Number(imovel.valorProprietario) : '0,00'}</div>
+          <div class="numCom">${imovel.comodos || 0} cômodos</div>         
+        </div>
+      `;
+          }
+      else
+      {
+          colDiv.innerHTML = `
+        <div class="fotoPropriedade" >
+          <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg" onclick='abrirInfoImovel${colDiv.id}'>
+        </div>
+        <div class="${alugado_cor}">
           <div class="endereco">${imovel.imovel_logradouro || 'Endereço não disponível'}, ${imovel.imovel_bairro || ''}</div>
           <div class="preco">R$ ${imovel.valorProprietario ? Number(imovel.valorProprietario) : '0,00'}</div>
           <div class="numCom">${imovel.comodos || 0} cômodos</div>
           <div class='divBTNS'><button class="botaoEditar" onclick='editar_pag(${colDiv.id})'></button><button class="botaoDeletar" onclick='deletarImovel(${colDiv.id})'></button></div>
-          
         </div>
-      `;
-      container.appendChild(colDiv);}
-    });
+      `;}
+      container.appendChild(colDiv);
+      }
+  });
 
   } catch (error) {
     console.error('Erro ao carregar produtos:', error);
@@ -80,12 +97,10 @@ window.deletarImovel = deletarImovel; // Torna a função global para uso no onc
 
 function editar_pag (idImovel)
 {
-     sessionStorage.clear();
      sessionStorage.setItem("idimovel", idImovel);
      window.location.href = "../editar_imovel/editar.html";
 }
 function abrirInfoImovel(idImovel){
-   sessionStorage.clear();
     sessionStorage.setItem("idimovel", idImovel);
      window.location.href = "../info_imovel/info_imovel.html";
 }

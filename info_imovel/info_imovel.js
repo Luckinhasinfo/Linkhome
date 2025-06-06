@@ -1,5 +1,5 @@
 const API_URL_INFO_IMOVEIS = 'http://localhost:3000/cadastrar_imovel_router';
-
+let estadoAluguel = 0;
 async function carregarInfoImovelPorId() {
   try {
     const idImovel = sessionStorage.getItem('idimovel');
@@ -18,7 +18,6 @@ async function carregarInfoImovelPorId() {
        const imovelClicado = imovel.find(imov => Number(imov.id) === idImovelNum);
     const imagens = imovelClicado.files_name ? imovelClicado.files_name.split(';').filter(Boolean) : [];
     const tamanhoImagens = imagens.length;
-    console.log(imagens, tamanhoImagens);
     const divInfo = document.getElementById('infoImovel');
     const divTabela = document.getElementById('divTabela');
     const textEndereco = document.getElementById('textEndereco');
@@ -132,12 +131,13 @@ function pegar_dados() {
     return;
 }
   else {
-    enviarDados(idUsuario,idImovelNum,checkIn, checkOut, numeroHospedes);
+    estadoAluguel = 1;
+    enviarDados(idUsuario,idImovelNum,checkIn, checkOut, numeroHospedes, estadoAluguel);
   }
 }
 
 
-async function enviarDados(idUsuario, idImovel, checkIn, checkOut, numeroHospedes) {
+async function enviarDados(idUsuario, idImovel, checkIn, checkOut, numeroHospedes, estadoAluguel) {
   try {
     const resposta = await fetch('http://localhost:3000/info_imovel_router', {
       method: 'POST',
@@ -147,7 +147,8 @@ async function enviarDados(idUsuario, idImovel, checkIn, checkOut, numeroHospede
         id_imovel: idImovel,
         data_check_in: checkIn,
         data_check_out: checkOut,
-        num_hospedes: numeroHospedes
+        num_hospedes: numeroHospedes,
+        estado_aluguel: estadoAluguel
       })
     });
 
@@ -165,7 +166,6 @@ async function enviarDados(idUsuario, idImovel, checkIn, checkOut, numeroHospede
 }
 let checkIn = document.getElementById("data");
 let checkOut = document.getElementById("data1");
-console.log(checkIn, checkOut);
 
 let botao = document.getElementById('botaoReservar');
 botao.addEventListener('click', pegar_dados);

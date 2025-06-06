@@ -18,10 +18,9 @@ exports.cadastrar = (req, res) => {
         valorProprietario,
         situacao_aluguel
     } = req.body;
-
+console.log('Dados recebidos:', req.body);
     if (
-        !cpf_proprietario ||
-        !imovel_cep || !imovel_bairro || !imovel_numero || !imovel_logradouro ||
+        !cpf_proprietario || !imovel_cep || !imovel_bairro || !imovel_numero || !imovel_logradouro ||
         !descricao || !files_name ||
         comodos === undefined || camas === undefined || banheiros === undefined ||
         quartos === undefined || valorProprietario === undefined || situacao_aluguel === undefined
@@ -92,6 +91,7 @@ exports.buscarPorId = (req, res) => {
 exports.atualizar = (req, res) => {
     const id = req.params.id;
     const {
+
         imovel_cep,
         imovel_bairro,
         imovel_numero,
@@ -105,7 +105,8 @@ exports.atualizar = (req, res) => {
         valorProprietario,
         situacao_aluguel
     } = req.body;
-
+console.log('Dados recebidos para atualização:', req.body);
+console.log(id);
     const sql = `
         UPDATE cadastrar_imovel SET
             imovel_cep = ?, imovel_bairro = ?, imovel_numero = ?, imovel_logradouro = ?, descricao = ?, files_name = ?,
@@ -116,6 +117,7 @@ exports.atualizar = (req, res) => {
     db.query(
         sql,
         [
+
             imovel_cep,
             imovel_bairro,
             imovel_numero,

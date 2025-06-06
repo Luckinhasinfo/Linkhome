@@ -25,7 +25,6 @@ async function enviarDados(floatingEmail, floatingSenha) {
         const resultado = await resposta.json();
 
         if (resposta.ok && resultado.usuario) {
-            sessionStorage.clear();
             console.log('CPF do usuário logado:', resultado.usuario.cpf); // <-- Mostra o CPF no console
             sessionStorage.setItem('cpfUsuario', resultado.usuario.cpf);
             alert('Login realizado com sucesso!');

@@ -31,7 +31,7 @@
                 <button type="button" class="btn btn-primary"><img src="https://img.icons8.com/?size=100&id=HUc1yTz1glkd&format=png&color=000000" alt="cadeado_icon" width="20px" heigth="20px"> Segurança</button>
                 <button type="button" class="btn btn-primary" id="reservar"><img src="https://img.icons8.com/?size=100&id=7554&format=png&color=000000" alt="sino_recepcionista_icon" width="20px" heigth="20px"> Reservar</button>
                 <button type="button" class="btn btn-primary"><img src="https://img.icons8.com/?size=100&id=364&format=png&color=000000" alt="configuração_icon" width="20px" heigth="20px"> Configurações</button>
-                <button type="button" class="btn btn-primary ultimo"><img src="https://img.icons8.com/?size=100&id=2659&format=png&color=000000" alt="out_icon" width="20px" heigth="20px"> Sair da Conta</button>
+                <button type="button" class="btn btn-primary ultimo" id="sair"><img src="https://img.icons8.com/?size=100&id=2659&format=png&color=000000" alt="out_icon" width="20px" heigth="20px"> Sair da Conta</button>
               </div>
 
         </div>
@@ -47,5 +47,9 @@
 let infoPessoais = document.getElementById('infoPessoais');
           infoPessoais.addEventListener('click', () => {window.top.location.href = "../cadastrar_imovel/cadastrar_imovel.html"})
 
+          let sair = document.getElementById('sair')
+          sair.addEventListener('click', () => {
+                sessionStorage.clear();
+               window.top.location.href = "../login_inicial/index.html";})
      </script>
 </html>

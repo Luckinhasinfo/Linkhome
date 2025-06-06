@@ -1,8 +1,6 @@
 
 async function pegar_dados() {
     // Dados principais
-    let cpf_proprietario = document.getElementById('cpf_proprietario').value;
-    let numero_proprietario = document.getElementById('numero_proprietario').value;
     let imovel_cep = document.getElementById('imovel_cep').value;
     let imovel_bairro = document.getElementById('imovel_bairro').value;
     let imovel_numero = document.getElementById('imovel_numero').value;
@@ -17,15 +15,13 @@ async function pegar_dados() {
     const quartos = parseInt(document.getElementById('selectQuartos').value);
     const valorProprietario = parseFloat(document.querySelector('#idValorProprietario input').value);
     const situacao_aluguel = 0;
-
     // Validação simples
     if (
-        cpf_proprietario === '' ||
-        numero_proprietario === '' ||
         imovel_cep === '' ||
         imovel_bairro === '' ||
         imovel_numero === '' ||
-        imovel_logradouro === '' ||
+        imovel_logradouro === '' ||     
+        descricao === '' ||
         files.length === 0 ||
         isNaN(comodos) ||
         isNaN(camas) ||
@@ -63,7 +59,6 @@ async function pegar_dados() {
     console.log(`tste id: ${id_imovel}`)
     // 2. Envie os dados do imóvel com o caminho da(s) imagem(ns)
     await enviarDados(
-        cpf_proprietario,
         imovel_cep,
         imovel_bairro,
         imovel_numero,
@@ -76,14 +71,12 @@ async function pegar_dados() {
         quartos,
         valorProprietario,
         situacao_aluguel,
-        numero_proprietario,
         id_imovel
     );
 }
 
-async function enviarDados(
-    cpf_proprietario, imovel_cep, imovel_bairro, imovel_numero, imovel_logradouro, descricao,
-    files_name, comodos, camas, banheiros, quartos, valorProprietario, situacao_aluguel, numero_proprietario,
+async function enviarDados(imovel_cep, imovel_bairro, imovel_numero, imovel_logradouro, descricao,
+    files_name, comodos, camas, banheiros, quartos, valorProprietario, situacao_aluguel,
     id_imovel
 ) {
     try {
@@ -93,8 +86,7 @@ async function enviarDados(
             credentials: 'include',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                cpf_proprietario: cpf_proprietario,
-                numero_proprietario: numero_proprietario,
+
                 imovel_cep: imovel_cep,
                 imovel_bairro: imovel_bairro,
                 imovel_numero: imovel_numero,

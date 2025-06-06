@@ -144,6 +144,17 @@
     grid-column: 1fr 1fr;
     grid-template-columns: 70% 30%;
 }
+.infoImoveisAlugado{
+     background-color: royalblue;
+    height: 30%;
+    width: 100%; 
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+    display: grid;
+    grid-column: 1fr 1fr;
+    grid-template-columns: 70% 30%;
+}
+
 .endereco{
     margin-top: 30px;
     width: 85%;
