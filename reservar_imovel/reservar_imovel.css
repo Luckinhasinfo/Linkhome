@@ -1,6 +1,7 @@
 
 #divtitulo{
-     background-color:#9d4edd ;
+     
+    background-color: rgb(194, 194, 194) ;
      margin-top: 3%;
      display: flex;
      position: absolute;
@@ -11,7 +12,8 @@
     
  }
  .cabecalho{
-     background-color:#9d4edd;
+    
+    background-color: rgb(194, 194, 194) ;
      height: 15%;
      width: 100%;
      position: absolute;

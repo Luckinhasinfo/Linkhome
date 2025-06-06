@@ -27,28 +27,29 @@ async function carregarProdutosNovos() {
      
       if (imovel.cpf_proprietario == sessionStorage.getItem('cpfUsuario')) {
       const colDiv = document.createElement('div');
-      colDiv.className = 'propriedadeIcone';
+      colDiv.className = 'propriedadeIcon';
       colDiv.id = imovel.id;
       let alugado_cor = 'infoImoveis';
      if (imovel.situacao_aluguel == 1)
           {
-               alugado_cor = 'infoImoveisAlugado';
+               colDiv.style.backgroundColor = 'aquamarine';
                 colDiv.innerHTML = `
-        <div class="fotoPropriedade" >
-          <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg" onclick='abrirInfoImovel${colDiv.id}'>
-        </div>
-        <div class="${alugado_cor}">
+         <div class="fotoPropriedade" >
+          <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg" onclick='abrirInfoImovel(${colDiv.id})'>
+            </div>
+        <div class="infoImoveis">
           <div class="endereco">${imovel.imovel_logradouro || 'Endereço não disponível'}, ${imovel.imovel_bairro || ''}</div>
           <div class="preco">R$ ${imovel.valorProprietario ? Number(imovel.valorProprietario) : '0,00'}</div>
-          <div class="numCom">${imovel.comodos || 0} cômodos</div>         
-        </div>
+          <div class="numCom">${imovel.comodos || 0} cômodos</div>
+          
+        </div>      
       `;
           }
       else
       {
           colDiv.innerHTML = `
         <div class="fotoPropriedade" >
-          <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg" onclick='abrirInfoImovel${colDiv.id}'>
+          <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg" onclick='abrirInfoImovel(${colDiv.id})'>
         </div>
          <div id="expandir">
                     <div id="botaoExxx"><button id="botExpandir"><span class="material-symbols-outlined" onclick='aparecerOpcoes()'>
@@ -114,13 +115,12 @@ function abrirInfoImovel(idImovel){
      window.location.href = "../info_imovel/info_imovel.html";
 }
 
-function aparecerOpcoes() {
-  const expandirOpcoes = document.getElementsByClassName('.botExpandir');
+function aparecerOpcoes() { 
+  let expandirOpcoes = document.getElementsByClassName('botExpandir');
   if (expandirOpcoes) {
-    expandirOpcoes.forEach(opcao => {
+    Array.from(expandirOpcoes).forEach(opcao => {
       opcao.style.opacity = '1';
-    
-
+       num = 1;
   });
 }
 }

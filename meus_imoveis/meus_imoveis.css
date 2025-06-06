@@ -108,6 +108,21 @@
     width: 100%;
     margin-top: 60px;
 }
+.propriedadeIcon{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(194, 194, 194) ;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 380px;
+    border-radius: 15px;
+    position: relative;
+    z-index: 2;
+}
 .propriedadeIcon:hover #expandir{
     opacity: 1;
     transform: translateY(13%);
@@ -125,18 +140,62 @@
     width: 100%;
     height: 100%;
 }
-.propriedadeIcone{
+.fotoPropriedade{
+    border-radius:15px;
+    height: 70%;
+    width: 100%;
+}
+.infoImoveis{
+    height: 30%;
+    width: 100%; 
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+    display: grid;
+    grid-column: 1fr 1fr;
+    grid-template-columns: 70% 30%;
+}
+.infoImoveisAlugado{
+     background-color: aquamarine;
+    height: 30%;
+    width: 100%; 
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+    display: grid;
+    grid-column: 1fr 1fr;
+    grid-template-columns: 70% 30%;
+}
+.endereco{
     margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    background-color: rgb(226, 226, 226) ;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    height: 360px;
+    width: 85%;
+    margin-left: 7%;
+    text-align: left;
+    font-weight: 700;
+}
+.numCom{
+    width: 85%;
+    margin-left: 7%;
+    text-align: left;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.preco{
+    margin-top: 30px;
+    width: 85%;
+    margin-right: 7%;
+    text-align: right;
+    font-weight: 700;
+}
+
+#botaoAddNovoImovel{
+    width: 250px; 
+    height: 60px;
     border-radius: 15px;
-    position: relative;
+}
+
+.propriedadeImg{
+    border-radius:15px;
+    height: 100%;
+    width: 100%;
 }
 #expandir{
     opacity: 0;
@@ -195,61 +254,3 @@
     border-bottom-right-radius: 3px;
     border-top: none;
 }
-.fotoPropriedade{
-    border-radius:15px;
-    height: 70%;
-    width: 100%;
-}
-.infoImoveis{
-    height: 30%;
-    width: 100%; 
-    border-bottom-left-radius: 15%;
-    border-bottom-right-radius: 15%;
-    display: grid;
-    grid-column: 1fr 1fr;
-    grid-template-columns: 70% 30%;
-}
-.infoImoveisAlugado{
-     background-color: royalblue;
-    height: 30%;
-    width: 100%; 
-    border-bottom-left-radius: 15%;
-    border-bottom-right-radius: 15%;
-    display: grid;
-    grid-column: 1fr 1fr;
-    grid-template-columns: 70% 30%;
-}
-
-.endereco{
-    margin-top: 30px;
-    width: 85%;
-    margin-left: 7%;
-    text-align: left;
-    font-weight: 700;
-}
-.numCom{
-    width: 85%;
-    margin-left: 7%;
-    text-align: left;
-    font-weight: 400;
-}
-.preco{
-    margin-top: 30px;
-    width: 85%;
-    margin-right: 7%;
-    text-align: right;
-    font-weight: 700;
-}
-
-#botaoAddNovoImovel{
-    width: 250px; 
-    height: 60px;
-    border-radius: 15px;
-}
-
-.propriedadeImg{
-    border-radius:15px;
-    height: 100%;
-    width: 100%;
-}
-
