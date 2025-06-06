@@ -143,8 +143,11 @@
 .fotoPropriedade{
     border-radius:15px;
     height: 70%;
-    width: 100%;
-}
+    width: 95%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
+ }
 .infoImoveis{
     height: 30%;
     width: 100%; 

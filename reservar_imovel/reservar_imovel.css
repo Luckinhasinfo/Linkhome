@@ -108,65 +108,78 @@
      margin-inline-start: 11%;
  }
 #div-geral{
- top:28%;
- position: absolute;
- width: 100vw;
- height: 72vh;
- display: grid;
- grid-template-columns: 45% 55%;
- overflow-y: hidden;
-
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    width: 100%;
+    margin-top: 139px;
 }
-
-#div-lado-esquerdo
-{
-     display: flex;
-     gap:3%;
-     justify-content: center;
-     overflow-y: scroll;
-     background: linear-gradient(to bottom, #ffffff 0%, #ecebeb 70%);
-}
-
-
-
-
-
-
-.propriedadeIcone{
-     margin-top: 4%;
-     border-width: 0px;
-     background-color: #ffffff ;
-     position: relative;
-     width: 300px;
-     height: 320px;
-     border-radius: 15px;
-     border-style: solid;
-     
- 
- }
- .propriedadeIcone:hover{
-     border-radius: 15px;
-     background-color: #cecece;
-     transition: 0.5s;
-     scale:1.09;
- }
- .divfotoPropriedade{
-     border-radius:15px;
-     height: 70%;
-     width: 100%;
-     background-color: #FFFFFF;
- }
-
- .propriedadeImg{
-     border-radius:15px;
-     height: 100%;
-     width: 100%;
- }
- .infoPropriedade{
+#div-lado-esquerdo{
      display: grid;
      grid-template-columns: 1fr 1fr;
-     margin-top: 3%;
+     width: 90%;
+     margin-left: 5%;
+     margin-right: 5%;
+     margin-top: 20px;
+}
+.propriedadeIcon{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(194, 194, 194) ;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 380px;
+    border-radius: 15px;
+    position: relative;
+    z-index: 2;
+}
+.fotoPropriedade{
+    border-radius:15px;
+    height: 70%;
+    width: 95%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
  }
+ .propriedadeImg{
+    border-radius:15px;
+    height: 100%;
+    width: 100%;
+}
+ .infoImoveis{
+    height: 30%;
+    width: 100%; 
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+    display: grid;
+    grid-column: 1fr 1fr;
+    grid-template-columns: 70% 30%;
+}
+.endereco{
+    margin-top: 30px;
+    width: 85%;
+    margin-left: 7%;
+    text-align: left;
+    font-weight: 700;
+}
+.numCom{
+    width: 85%;
+    margin-left: 7%;
+    text-align: left;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.preco{
+    margin-top: 30px;
+    width: 85%;
+    margin-right: 7%;
+    text-align: right;
+    font-weight: 700;
+}
+
  #localizacão{
      margin-left: 7%;
  }
@@ -174,7 +187,7 @@
  
  #div-mapa
 {
-     /* width: 50%; Já tem no boostrap*/
+     width: 100%;
      height: 100%;
 }
 
@@ -182,7 +195,7 @@
  {
      border-radius: 5px;
      width: 100%;
-     height: 100%;
+     height: 100vh;
  }
 
 

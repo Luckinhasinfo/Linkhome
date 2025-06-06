@@ -42,13 +42,28 @@ async function carregarProdutosNovos() {
       const imagens = imovel.files_name ? imovel.files_name.split(';').filter(Boolean) : [];
       const primeiraImagem = imagens.length > 0 ? imagens[0] : console.log('nao achou');
      const colDiv = document.createElement('div');
+       colDiv.className = 'propriedadeIcon';
+       colDiv.id = imovel.id;
+       colDiv.onclick = () => abrirInfoImovel(colDiv.id);
        if (imovel.situacao_aluguel == 0) {
-      colDiv.className = 'propriedadeIcone';
-      colDiv.id = imovel.id;
-      colDiv.onclick = () => abrirInfoImovel(colDiv.id);
-      
+            
       colDiv.innerHTML = `
-        <div class="fotoPropriedade" >
+               <div class="fotoPropriedade">
+                    <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg"
+                         onclick='abrirInfoImovel()'>
+               </div>
+               <div class="infoImoveis">
+                    <div class="endereco">${imovel.imovel_logradouro || 'Endereço não disponível'}, ${imovel.imovel_bairro || ''}</div>
+                    <div class="preco">R$ ${imovel.valorProprietario ? Number(imovel.valorProprietario) : '0,00'}</div>
+                    <div class="numCom">${imovel.comodos || 0} cômodos</div>
+               </div>
+      `;
+      }
+      else
+      {
+          colDiv.style.backgroundColor = 'aquamarine';
+          colDiv.innerHTML = `
+          <div class="fotoPropriedade" >
           <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg">
         </div>
         <div class="infoImoveis">
