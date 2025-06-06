@@ -41,11 +41,12 @@ async function carregarProdutosNovos() {
       // Verifica imagens 
       const imagens = imovel.files_name ? imovel.files_name.split(';').filter(Boolean) : [];
       const primeiraImagem = imagens.length > 0 ? imagens[0] : console.log('nao achou');
-     
-      const colDiv = document.createElement('div');
+     const colDiv = document.createElement('div');
+       if (imovel.situacao_aluguel == 0) {
       colDiv.className = 'propriedadeIcone';
       colDiv.id = imovel.id;
       colDiv.onclick = () => abrirInfoImovel(colDiv.id);
+      
       colDiv.innerHTML = `
         <div class="fotoPropriedade" >
           <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg">
@@ -56,6 +57,7 @@ async function carregarProdutosNovos() {
           <div class="numCom">${imovel.comodos || 0} cômodos</div>
         </div>
       `;
+      }
       container.appendChild(colDiv);
     });
 
