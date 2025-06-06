@@ -114,7 +114,16 @@ function abrirInfoImovel(idImovel){
      window.location.href = "../info_imovel/info_imovel.html";
 }
 
+function aparecerOpcoes() {
+  const expandirOpcoes = document.getElementsByClassName('.botExpandir');
+  if (expandirOpcoes) {
+    expandirOpcoes.forEach(opcao => {
+      opcao.style.opacity = '1';
+    
 
+  });
+}
+}
 
 
 
