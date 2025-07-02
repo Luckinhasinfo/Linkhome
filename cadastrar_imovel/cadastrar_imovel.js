@@ -1,11 +1,3 @@
-function validarCPF(cpf){
-    for( i=0; i < cpf.length; i++ ){
-            if (isNaN(cpf[i]) || cpf[i] === ' ') {
-                alert('CPF inválido!');
-                return false;
-            }
-        };
-}
 async function pegar_dados() {
     // Dados principais
     let imovel_cep = document.getElementById('imovel_cep').value;
@@ -24,9 +16,14 @@ async function pegar_dados() {
     const valorProprietario = parseFloat(document.querySelector('#idValorProprietario input').value);
     const situacao_aluguel = 0;
     // Validação simples
-     
+     for( i=0; i < cpf_proprietario.length; i++ ){
+            if (isNaN(cpf_proprietario[i]) || cpf_proprietario[i] === ' ') {
+                alert('CPF inválido!');
+                return
+            }
+        };
     if(
-        validarCPF(cpf_proprietario) === false ||
+       
         valorProprietario === '' && valorProprietario > 0 ||
         cpf_proprietario === '' ||
         imovel_cep === '' ||

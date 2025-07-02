@@ -1,4 +1,5 @@
 const API_URL_INFO_IMOVEIS = 'http://localhost:3000/cadastrar_imovel_router';
+let situacaoAluguel = 0; // Variável para armazenar a situação do aluguel
 let estadoAluguel = 0;
 async function carregarInfoImovelPorId() {
   try {
@@ -29,7 +30,7 @@ async function carregarInfoImovelPorId() {
     textEndereco.innerHTML = '';
     descricao.innerHTML = '';
     valorDiaria.innerHTML = '';
-
+     situacaoAluguel = imovelClicado.situacao_aluguel;
     if (!divInfo) {
       throw new Error('Elemento de informação não encontrado no DOM');
     }
@@ -118,6 +119,10 @@ async function carregarInfoImovelPorId() {
 
 
 function pegar_dados() {
+     if (situacaoAluguel === 1) {
+    alert('Imóvel já está alugado!');
+     return
+}
   let checkIn = document.getElementById("data").value;
   let checkOut = document.getElementById("data1").value;
   let numeroHospedes = document.getElementById("selecionarNum").value;
@@ -168,6 +173,7 @@ let checkIn = document.getElementById("data");
 let checkOut = document.getElementById("data1");
 
 let botao = document.getElementById('botaoReservar');
+
 botao.addEventListener('click', pegar_dados);
 
 

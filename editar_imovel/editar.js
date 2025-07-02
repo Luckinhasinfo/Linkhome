@@ -17,17 +17,17 @@ async function pegar_dados() {
     const situacao_aluguel = 0;
     // Validação simples
     if (
-        imovel_cep === '' ||
+        imovel_cep === '' && isNaN(imovel_cep) === false  ||
         imovel_bairro === '' ||
         imovel_numero === '' ||
-        imovel_logradouro === '' ||     
+        imovel_logradouro === '' ||
         descricao === '' ||
         files.length === 0 ||
-        isNaN(comodos) ||
-        isNaN(camas) ||
-        isNaN(banheiros) ||
-        isNaN(quartos) ||
-        isNaN(valorProprietario)
+        isNaN(comodos) || comodos <= 0 ||
+        isNaN(camas) || camas < 0 ||
+        isNaN(banheiros) || banheiros < 0 ||
+        isNaN(quartos) || quartos < 0 ||
+        isNaN(valorProprietario) || valorProprietario <= 0
     ) {
         alert('Preencha todos os campos obrigatórios!');
         return;

@@ -35,7 +35,7 @@ async function carregarProdutosNovos() {
                colDiv.style.backgroundColor = 'aquamarine';
                 colDiv.innerHTML = `
          <div class="fotoPropriedade" >
-          <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg" onclick='abrirInfoImovel(${colDiv.id})'>
+          <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg"'>
             </div>
         <div class="infoImoveis">
           <div class="endereco">${imovel.imovel_logradouro || 'Endereço não disponível'}, ${imovel.imovel_bairro || ''}</div>
