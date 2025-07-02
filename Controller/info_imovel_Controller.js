@@ -1,4 +1,4 @@
-const db = require('../banco_dados/bd_config');
+const db = require('../models/bd_config');
 
 // Lista todas as reservas
 exports.listar = (req, res) => {

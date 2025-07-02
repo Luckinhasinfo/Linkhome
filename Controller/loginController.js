@@ -1,4 +1,4 @@
-const db = require('../banco_dados/bd_config');
+const db = require('../models/bd_config');
 const bcrypt = require('bcrypt');
 // Lista todos os logins (opcional, se quiser listar todos os usuários)
 exports.listar = (req, res) => {
