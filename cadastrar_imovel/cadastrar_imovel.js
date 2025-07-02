@@ -1,3 +1,11 @@
+function validarCPF(cpf){
+    for( i=0; i < cpf.length; i++ ){
+            if (isNaN(cpf[i]) || cpf[i] === ' ') {
+                alert('CPF inválido!');
+                return false;
+            }
+        };
+}
 async function pegar_dados() {
     // Dados principais
     let imovel_cep = document.getElementById('imovel_cep').value;
@@ -16,19 +24,22 @@ async function pegar_dados() {
     const valorProprietario = parseFloat(document.querySelector('#idValorProprietario input').value);
     const situacao_aluguel = 0;
     // Validação simples
-    if (
+     
+    if(
+        validarCPF(cpf_proprietario) === false ||
+        valorProprietario === '' && valorProprietario > 0 ||
         cpf_proprietario === '' ||
         imovel_cep === '' ||
-        imovel_bairro === '' ||
-        imovel_numero === '' ||
-        imovel_logradouro === '' ||
+        imovel_bairro === '' && isNaN(imovel_bairro) == true||
+        imovel_numero === '' && imovel_numero >= 0 ||
+        imovel_logradouro === '' && isNaN(imovel_logradouro) == true ||
         files.length === 0 ||
-        isNaN(comodos) ||
-        isNaN(camas) ||
-        isNaN(banheiros) ||
-        isNaN(quartos) ||
-        isNaN(valorProprietario)
-    ) {
+        isNaN(comodos) && comodos > 0 ||
+        isNaN(camas) && camas >= 0 ||
+        isNaN(banheiros) && banheiros > 0 ||
+        isNaN(quartos)  && banheiros > 0 ||
+        isNaN(valorProprietario) && valorProprietario > 0
+    ){
         alert('Preencha todos os campos obrigatórios!');
         return;
     }

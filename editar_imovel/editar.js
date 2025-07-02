@@ -118,3 +118,41 @@ async function enviarDados(imovel_cep, imovel_bairro, imovel_numero, imovel_logr
 
 let botao = document.getElementById('botaoProximo');
 botao.addEventListener('click', pegar_dados);
+
+
+
+
+//colocar la nos inputs
+addEventListener('DOMContentLoaded', async () => {
+    let id_imovel = sessionStorage.getItem('idimovel');
+    if (!id_imovel) {
+        alert('ID do imóvel não encontrado.');
+        return;
+    }
+
+    try {
+        const resposta = await fetch(`http://localhost:3000/cadastrar_imovel_router/${id_imovel}`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        if (!resposta.ok) {
+            throw new Error('Erro ao buscar dados do imóvel');
+        }
+
+        const imovel = await resposta.json();
+        // Preencher os campos com os dados do imóvel
+        document.getElementById('imovel_cep').value = imovel.imovel_cep;
+        document.getElementById('imovel_bairro').value = imovel.imovel_bairro;
+        document.getElementById('imovel_numero').value = imovel.imovel_numero;
+        document.getElementById('imovel_logradouro').value = imovel.imovel_logradouro;
+        document.getElementById('floatingTextarea2').value = imovel.descricao;
+        document.getElementById('selectComodos').value = imovel.comodos;
+        document.getElementById('selectCamas').value = imovel.camas;
+        document.getElementById('selectBanheiros').value = imovel.banheiros;
+        document.getElementById('selectQuartos').value = imovel.quartos;
+        document.querySelector('#idValorProprietario input').value = imovel.valorProprietario;
+    } catch (error) {
+        alert('Erro inesperado: ' + error.message);
+    }
+});

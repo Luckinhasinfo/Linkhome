@@ -21,34 +21,25 @@
         </button>
         <h3 id="textVoltar">Voltar</h3>
     </div>
-    <div id="divOpcoes">
-        <div id="divDefinirLocal">
-            <span id="paisAtual">BRL</span>
-            <button id="btnDefinirLocal">
-                <div id="divImgPais">
-                    <img id="imgPais" src="../imagens/brasil.jpeg">
-                </div>
-            </button>
-        </div>
 
         <!--NAO APAGAR PERFIL-->
-        <div id="divPerfil">
-            <button id="btnPerfil" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-                aria-controls="offcanvasWithBothOptions"><i class="fa-solid fa-user">
-                </i>
-            </button>
-        </div>
-        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
-            aria-labelledby="offcanvasWithBothOptionsLabel">
-            <div class="offcanvas-header">
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body iframe_perfil">
-                <iframe src="../user/user.html" width="100%" height="100%"></iframe>
-            </div>
-        </div>
-        <!--NAO APAGAR PERFIL-->
-    </div>
+         <div class="position-absolute top-0 end-0" id="divPerfil">
+               <button id="btnPerfil" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i
+                         class="fa-solid fa-user">
+                    </i>
+               </button>
+          </div>
+          <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+               aria-labelledby="offcanvasWithBothOptionsLabel">
+               <div class="offcanvas-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+               </div>
+               <div class="offcanvas-body iframe_perfil">
+                    <iframe src="../user/user.html" width="100%" height="100%"></iframe>
+               </div>
+          </div>
+          <!--NAO APAGAR PERFIL-->
 
     <div id="backAdd">
         <div id="adicionar">Editar Imóvel</div>

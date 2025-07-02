@@ -1,128 +1,30 @@
-
-#divtitulo{
-     
-    background-color: rgb(194, 194, 194) ;
-     margin-top: 3%;
-     display: flex;
-     position: absolute;
-     text-align: center;
-     padding-top: 40px;
-     height: 100px;
-     width: 300px;
-    
- }
- .cabecalho{
-    
-    background-color: rgb(194, 194, 194) ;
-     height: 15%;
-     width: 100%;
-     position: absolute;
- }
- #h1titulo{
-     color: #ffffff;
-     font-size: 40px;
-     height: 100%;
-     width: 100%;
- }
- #divFiltros{
- 
-     background-color:#ffffff;
-     border-color: black;
-     border-left-style: none;
-     border-right-style: none;
-     border-top-style: solid;
-     border-width: 2px;
-     top:15%;
-     position: absolute;
-     height: 80px;
-     width:100%;
-     text-align: center;
- }
- #btnFiltros{
-     display: flexbox;
-     margin-inline-start: 91%;
-     margin-top:18px;
-     text-align: center;
-     font-size: 15px;
-     height:40px;
-     width:90px;
-     border-radius: 5px;
- 
- }
- #iconeFiltro{
-     padding-right: 3px;
- }
- #divOpcoes{
-     text-align: left;
-     display: flex;
-     margin-inline-start: 89%;
-     border-width: 2px;
-     top:5%;
-     position: absolute;
-     height: 60px;
-     width:200px;
- }
- #divPerfil{
-     border-radius: 25px;
-     margin-inline-end: 15%;
-     height: 49px;
-     width: 49px;
-     display: flex;
- }
- #btnPerfil{
-     height: 100%;
-     width: 100%;
-     align-items: center;
-     border-radius: 50px;
- }
- #divDefinirLocal{
-     display: flexbox;
-     text-align: start;
-     margin-right: 5%;
-     height:50px;
-     width: 120px;
- }
- #btnDefinirLocal{
-     width: 100%;
-     height: 100%;
-     border-radius: 50px;
-     
- }
- #imgPais{
-     border-radius: 50px;
-     height: 100%;
-     width: 100%;
- 
- }
- #divImgPais{
-     margin-left: 59%;
-     height: 45px;
-     width: 45px;
- }
- #paisAtual{
-     position: absolute;
-     text-align: justify;
-     width: 20px;
-     height: 100%;
-     margin-top: 7%;
-     margin-inline-start: 11%;
- }
-#div-geral{
-    display: grid;
-    grid-template-columns: 1fr 1fr ;
+.cabecalho{
+    background-color: rgba(0,0,0, 0.5);
+    height: 170px;
     width: 100%;
-    margin-top: 139px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#div-lado-esquerdo{
+#textTitulo{
+    width:100%;
+    text-align: center;
+    font-size: 40px;
+
+}
+#h1titulo{
+    color: #ffffff;
+    font-size: 40px;
+    height: 100%;
+    width: 100%;
+}
+#div-aparecer-propriedade{
      display: grid;
-     grid-template-columns: 1fr 1fr;
-     width: 90%;
-     margin-left: 5%;
-     margin-right: 5%;
-     margin-top: 20px;
+     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+     width: 100%;
+     margin-top: 60px;
 }
 .propriedadeIcon{
-    margin-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;

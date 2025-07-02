@@ -30,7 +30,7 @@ async function carregarProdutosNovos() {
     if (!Array.isArray(imoveis)) {
       throw new Error('Dados recebidos não são um array de imoveis');
     }
-    const container = document.getElementById("div-lado-esquerdo");
+    const container = document.getElementById("div-aparecer-propriedade");
     if (!container) {
       throw new Error('Elemento "div-lado-esquerdo" não encontrado no DOM');
     }
