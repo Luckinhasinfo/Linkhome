@@ -25,6 +25,7 @@
      margin-top: 60px;
 }
 .propriedadeIcon{
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;

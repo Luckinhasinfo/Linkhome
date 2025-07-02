@@ -114,15 +114,22 @@ function abrirInfoImovel(idImovel){
     sessionStorage.setItem("idimovel", idImovel);
      window.location.href = "../info_imovel/info_imovel.html";
 }
+let num = 0;
 
 function aparecerOpcoes() { 
   let expandirOpcoes = document.getElementsByClassName('botExpandir');
-  if (expandirOpcoes) {
+
+  if (num === 0) {
     Array.from(expandirOpcoes).forEach(opcao => {
       opcao.style.opacity = '1';
-       num = 1;
-  });
-}
+    });
+    num = 1;
+  } else {
+    Array.from(expandirOpcoes).forEach(opcao => {
+      opcao.style.opacity = '0';
+    });
+    num = 0;
+  }
 }
 
 

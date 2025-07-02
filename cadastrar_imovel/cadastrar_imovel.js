@@ -16,18 +16,14 @@ async function pegar_dados() {
     const valorProprietario = parseFloat(document.querySelector('#idValorProprietario input').value);
     const situacao_aluguel = 0;
     // Validação simples
-     for( i=0; i < cpf_proprietario.length; i++ ){
-            if (isNaN(cpf_proprietario[i]) || cpf_proprietario[i] === ' ') {
-                alert('CPF inválido!');
-                return
-            }
-        };
+   
     if(
        
         valorProprietario === '' && valorProprietario > 0 ||
         cpf_proprietario === '' ||
         imovel_cep === '' ||
-        imovel_bairro === '' && isNaN(imovel_bairro) == true||
+        imovel_bairro === '' ||
+        isNaN(imovel_bairro) == true||
         imovel_numero === '' && imovel_numero >= 0 ||
         imovel_logradouro === '' && isNaN(imovel_logradouro) == true ||
         files.length === 0 ||
