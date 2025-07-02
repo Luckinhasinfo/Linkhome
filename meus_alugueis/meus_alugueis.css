@@ -1,4 +1,6 @@
-
+body{
+    overflow-y: hidden;
+}
 #divtitulo{
     background-color:#9d4edd ;
     margin-top: 3%;
@@ -160,6 +162,8 @@
 
 .preco{
      top:30%;
+     overflow-x: hidden;
+    overflow-y: hidden;
 }
 #imagem_fundo
 {

@@ -17,10 +17,14 @@ async function pegar_dados() {
     const situacao_aluguel = 0;
     // Validação simples
     if (
-        imovel_cep === '' && isNaN(imovel_cep) === true  ||
-        imovel_bairro === '' && isNaN(imovel_bairro) === false  ||
-        imovel_numero === '' && isNaN(imovel_numero) === true ||
-        imovel_logradouro === '' && isNaN(imovel_numero) === false ||
+        imovel_cep === '' ||
+        isNaN(imovel_cep) === true  ||
+        imovel_bairro === '' ||
+        isNaN(imovel_bairro) === false  ||
+        imovel_numero === '' ||
+        isNaN(imovel_numero) === true ||
+        imovel_logradouro === '' ||
+        isNaN(imovel_numero) === false ||
         descricao === ''  ||
         files.length === 0 ||
         isNaN(comodos) || comodos <= 0 ||
@@ -30,6 +34,16 @@ async function pegar_dados() {
         isNaN(valorProprietario) || valorProprietario <= 0
     ) {
         alert('Preencha todos os campos obrigatórios!');
+        return;
+    }
+    if (
+        imovel_bairro.includes(',',';','/','<','-','_','>','?','!','(',')') ||
+        imovel_logradouro.includes(',',';','/','<','-','_','>','?','!','(',')') ||
+        imovel_numero.includes(',',';','/','<','-','_','>','?','!','(',')') ||
+        imovel_cep.includes(',',';','/','<','-','_','>','?','!','(',')') ||
+        descricao.includes(',',';','/','<','-','_','>','?','!','(',')')
+    ) {
+        alert('Os campos não podem conter caracteres especiais como: , ; / < - _ > ? ! ( )');
         return;
     }
 

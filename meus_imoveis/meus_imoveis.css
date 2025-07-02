@@ -1,4 +1,7 @@
 
+body{
+    overflow-y: hidden;
+}
 .cabecalho{
     background-color: rgba(0,0,0, 0.5);
     height: 170px;
@@ -90,6 +93,8 @@
     margin-left: 7%;
     text-align: left;
     font-weight: 700;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 .numCom{
     width: 85%;
@@ -104,6 +109,8 @@
     margin-right: 7%;
     text-align: right;
     font-weight: 700;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 #botaoAddNovoImovel{

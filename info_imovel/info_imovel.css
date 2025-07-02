@@ -2,6 +2,7 @@ body{
     padding: 0px;
     margin: 0px;
     font-family: 'Poppins', sans-serif;
+    overflow-y: hidden;
 }
 #partSuper{
     display: flex;
@@ -52,6 +53,8 @@ body{
 #textNameLocal{
     font-size: 30px;
     color: black;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 #colorBack{
     width: 80%;
@@ -86,8 +89,12 @@ body{
   filter: brightness(1.9); 
 }
 .textInfo{
-    font-size: 25px;
-    color: black;
+  font-size: 25px;
+  color: black;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  display: inline-block; 
 }
 
 #infoParteBaixa{
@@ -100,7 +107,8 @@ body{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    height: 200px;
+    height: auto;
+    max-width: 100%;
 }
 #agendarReserva{
     width: 80%;

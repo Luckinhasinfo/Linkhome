@@ -49,25 +49,25 @@
           
             <div id="endereco">Endereço</div>
             <div id="formImovel">
-                <div class="div-input divInputCadas">
+                <div  class="div-input divInputCadas">
                     <label class="label-input" for="floatingEmail">CEP</label>
                     <input type="text" class="form-control inputCadas" id='imovel_cep'
-                        placeholder="Digite o CEP do imóvel">
+                        placeholder="Digite o CEP do imóvel" maxlength="20" >
                 </div>
                 <div class="div-input divInputCadasRig">
                     <label class="label-input" for="floatingEmail">Bairro</label>
                     <input type="text" class="form-control inputCadasRig" id='imovel_bairro'
-                        placeholder="Digite o Bairro do imóvel">
+                        placeholder="Digite o Bairro do imóvel" maxlength="50">
                 </div>
                 <div class="div-input divInputCadas">
                     <label class="label-input" for="floatingEmail">Número(N°)</label>
                     <input type="text" class="form-control inputCadas" id='imovel_numero'
-                        placeholder="Digite o Número do imóvel">
+                        placeholder="Digite o Número do imóvel" maxlength="10">
                 </div>
                 <div class="div-input divInputCadasRig">
                     <label class="label-input" for="floatingEmail">Logradouro</label>
                     <input type="text" class="form-control inputCadasRig" id='imovel_logradouro'
-                        placeholder="Digite o logradouro do imóvel">
+                        placeholder="Digite o logradouro do imóvel" maxlength="180">
                 </div>
             </div>
             <div id="dados">Informações da Propriedade</div>
@@ -140,7 +140,7 @@
             <div id="divDesc">
                 <div class="form-floating textarea">
                     <textarea class="form-control descricao" id="floatingTextarea2"
-                        style="height: 100px"></textarea>
+                         maxlength="300" style="height: 100px"></textarea>
                     <label for="floatingTextarea2">Descrição</label>
                 </div>
 
@@ -148,7 +148,7 @@
             <div id="textImagem">Upload de Imagens do Imóvel</div>
             <div id="baixarImagens">
                 <div class="inputImage">
-                    <input type='file' id="foto_imovel" name="fotos_imovel" accept="image/*" multiple>
+                    <input type='file' id="foto_imovel" name="fotos_imovel" accept="image/*" required multiple>
                 </div>
             </div>
         </form>

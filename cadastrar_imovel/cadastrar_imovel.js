@@ -19,21 +19,31 @@ async function pegar_dados() {
    
     if(
        
-        valorProprietario === '' && valorProprietario > 0 ||
+        valorProprietario === '' ||
+        valorProprietario <= 0 ||
         cpf_proprietario === '' ||
         imovel_cep === '' ||
+        isNaN(imovel_cep) == true||
         imovel_bairro === '' ||
-        isNaN(imovel_bairro) == true||
-        imovel_numero === '' && imovel_numero >= 0 ||
-        imovel_logradouro === '' && isNaN(imovel_logradouro) == true ||
+         isNaN(imovel_bairro) == false||
+        imovel_numero === '' ||
+         imovel_numero <= 0 ||
+         isNaN(imovel_numero) == true||
+        imovel_logradouro === '' ||
+         isNaN(imovel_logradouro) == false ||
         files.length === 0 ||
-        isNaN(comodos) && comodos > 0 ||
-        isNaN(camas) && camas >= 0 ||
-        isNaN(banheiros) && banheiros > 0 ||
-        isNaN(quartos)  && banheiros > 0 ||
-        isNaN(valorProprietario) && valorProprietario > 0
+        isNaN(comodos) ||
+         comodos < 0 ||
+        isNaN(camas) ||
+         camas <= 0 ||
+        isNaN(banheiros) ||
+         banheiros < 0 ||
+        isNaN(quartos)  ||
+         banheiros < 0 ||
+        isNaN(valorProprietario) ||
+         valorProprietario <= 0
     ){
-        alert('Preencha todos os campos obrigatórios!');
+        alert('Preencha todos os campos obrigatórios corretamente!');
         return;
     }
 

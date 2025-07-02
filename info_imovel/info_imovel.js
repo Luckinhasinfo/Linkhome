@@ -131,7 +131,7 @@ function pegar_dados() {
   const idUsuario = sessionStorage.getItem('cpfUsuario');
 
 
-  if (checkIn === '' || checkOut === '' || numeroHospedes === '' || idImovelNum === null || idImovelNum === ''|| idUsuario === null || idUsuario === '') {
+  if (numeroHospedes <= 0 ||  checkIn === '' || checkOut === '' || numeroHospedes === '' || idImovelNum === null || idImovelNum === ''|| idUsuario === null || idUsuario === '') {
     alert('Preencha todos os campos corretamente!');
     return;
 }

@@ -52,12 +52,12 @@ async function carregarProdutosNovos() {
           <img src="../${primeiraImagem}" alt="Imagem do imóvel" class="propriedadeImg" onclick='abrirInfoImovel(${colDiv.id})'>
         </div>
          <div id="expandir">
-                    <div id="botaoExxx"><button id="botExpandir"><span class="material-symbols-outlined" onclick='aparecerOpcoes()'>
+                    <div id="botaoExxx"><button id="botExpandir"><span class="material-symbols-outlined" onclick='aparecerOpcoes(${colDiv.id})'>
                               more_horiz
                          </span></button></div>
                <div class="expandirOpcoes">
-                    <div class="botExpandir" id="botExcluir"><button id="excluir" onclick='deletarImovel(${colDiv.id})'>Excluir</button></div>
-                    <div class="botExpandir" id="botEditar"><button id="editar" onclick='editar_pag(${colDiv.id})'>Editar</button></div>
+                    <div class="botExpandir ${colDiv.id}" id="botExcluir"><button id="excluir" onclick='deletarImovel(${colDiv.id})'>Excluir</button></div>
+                    <div class="botExpandir ${colDiv.id}" id="botEditar"><button id="editar" onclick='editar_pag(${colDiv.id})'>Editar</button></div>
                 </div>
                 </div>
         <div class="infoImoveis">
@@ -116,8 +116,8 @@ function abrirInfoImovel(idImovel){
 }
 let num = 0;
 
-function aparecerOpcoes() { 
-  let expandirOpcoes = document.getElementsByClassName('botExpandir');
+function aparecerOpcoes(id) { 
+  let expandirOpcoes = document.getElementsByClassName('botExpandir' + id)|| [];
 
   if (num === 0) {
     Array.from(expandirOpcoes).forEach(opcao => {
