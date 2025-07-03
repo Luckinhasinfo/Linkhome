@@ -117,7 +117,7 @@ function abrirInfoImovel(idImovel){
 let num = 0;
 
 function aparecerOpcoes(id) { 
-  let expandirOpcoes = document.getElementsByClassName('botExpandir' + id)|| [];
+  let expandirOpcoes = document.getElementsByClassName(id);
 
   if (num === 0) {
     Array.from(expandirOpcoes).forEach(opcao => {

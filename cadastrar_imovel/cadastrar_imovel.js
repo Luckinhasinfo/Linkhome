@@ -41,15 +41,33 @@ async function pegar_dados() {
         isNaN(quartos)  ||
          banheiros < 0 ||
         isNaN(valorProprietario) ||
-         valorProprietario <= 0
+         valorProprietario <= 0 ||
+          imovel_bairro.includes("<") ||
+        imovel_logradouro.includes("<") ||
+        descricao.includes("<")
     ){
         alert('Preencha todos os campos obrigatórios corretamente!');
         return;
     }
-
+      if (
+        imovel_bairro.includes(',',';','/','<','-','_','>','?','!','(',')') ||
+        imovel_logradouro.includes(',',';','/','<','-','_','>','?','!','(',')') ||
+        imovel_numero.includes(',',';','/','<','-','_','>','?','!','(',')') ||
+        imovel_cep.includes(',',';','/','<','-','_','>','?','!','(',')') ||
+        descricao.includes(',',';','/','<','-','_','>','?','!','(',')')
+    ) {
+        alert('Os campos não podem conter caracteres especiais como: , ; / < - _ > ? ! ( )');
+        return;
+    }
     //Envie as imagens primeiro e pegue o caminho retornado bando de retardado
     let files_name = '';
     try {
+        for (let i = 0; i < files.length; i++) {
+            if (!files[i].type.startsWith('image/')) {
+                alert('Não é uma imagem válida. Por favor, selecione apenas arquivos de imagem.');
+                return;
+            }
+        }
         const formData = new FormData();//key/ igual obj key/coisinha po
         for (let i = 0; i < files.length; i++) {
             formData.append('fotos_imovel', files[i]);

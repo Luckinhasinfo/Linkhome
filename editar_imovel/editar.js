@@ -17,25 +17,21 @@ async function pegar_dados() {
     const situacao_aluguel = 0;
     // Validação simples
     if (
-        imovel_cep === '' ||
-        isNaN(imovel_cep) === true  ||
-        imovel_bairro === '' ||
-        isNaN(imovel_bairro) === false  ||
-        imovel_numero === '' ||
-        isNaN(imovel_numero) === true ||
-        imovel_logradouro === '' ||
-        isNaN(imovel_numero) === false ||
-        descricao === ''  ||
-        files.length === 0 ||
-        isNaN(comodos) || comodos <= 0 ||
-        isNaN(camas) || camas < 0 ||
-        isNaN(banheiros) || banheiros < 0 ||
-        isNaN(quartos) || quartos < 0 ||
-        isNaN(valorProprietario) || valorProprietario <= 0
-    ) {
-        alert('Preencha todos os campos obrigatórios!');
-        return;
-    }
+    imovel_cep === '' || isNaN(imovel_cep) ||
+    imovel_bairro === '' || 
+    imovel_numero === '' || isNaN(imovel_numero) ||
+    imovel_logradouro === '' ||
+    descricao === '' ||
+    files.length === 0 ||
+    isNaN(comodos) || comodos <= 0 ||
+    isNaN(camas) || camas < 0 ||
+    isNaN(banheiros) || banheiros < 0 ||
+    isNaN(quartos) || quartos < 0 ||
+    isNaN(valorProprietario) || valorProprietario <= 0
+) {
+    alert('Preencha todos os campos obrigatórios!');
+    return;
+}
     if (
         imovel_bairro.includes(',',';','/','<','-','_','>','?','!','(',')') ||
         imovel_logradouro.includes(',',';','/','<','-','_','>','?','!','(',')') ||
@@ -50,6 +46,12 @@ async function pegar_dados() {
     // 1. Envie as imagens primeiro e pegue o(s) caminho(s) retornado(s)
     let files_name = '';
     try {
+      for (let i = 0; i < files.length; i++) {
+            if (!files[i].type.startsWith('image/')) {
+                alert('Não é uma imagem válida. Por favor, selecione apenas arquivos de imagem.');
+                return;
+            }
+        }
         const formData = new FormData();
         for (let i = 0; i < files.length; i++) {
             formData.append('fotos_imovel', files[i]);
